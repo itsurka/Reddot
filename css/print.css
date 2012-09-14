@@ -1,0 +1,12 @@
+.bg, .col_rg {
+    display:none;
+}
+
+#prof_pop_win .col_lf {
+    border-right: 0px;
+    position: absolute;
+}
+
+.bott {
+    display:none;
+}

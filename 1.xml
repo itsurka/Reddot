@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<ymaps:ymaps xmlns:ymaps="http://maps.yandex.ru/ymaps/1.x" xmlns:repr="http://maps.yandex.ru/representation/1.x" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maps.yandex.ru/schemas/ymaps/1.x/ymaps.xsd">
+    <repr:Representation>
+        <repr:Style gml:id="customStyle">
+            <repr:iconStyle>
+                <repr:href>http://reddot.tomm.comeze.com/images/map_myIcon.png</repr:href>
+                <repr:size x="26" y="32"/>
+                <repr:offset x="-13" y="-32"/>
+            </repr:iconStyle>
+
+            <repr:balloonContentStyle>
+                <repr:template>#balloonTemplate</repr:template>
+            </repr:balloonContentStyle>
+        </repr:Style>
+
+        <repr:Template gml:id="balloonTemplate">
+            <repr:text><![CDATA[
+                        <table width="240" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td><div style="color:#000000;font-weight:bold;margin-bottom:5px;">$[name]</div></td>
+                            </tr>
+                            <tr>
+                                <td><div style="color:#000000;font-size: 14px;margin-bottom: 5px;">$[description]</div></td>
+                            </tr>
+                            <tr>
+                                <td style="border-top: 1px #eaeaea solid;">
+                                    <table width="100%" height="35" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td style="color:#000000;font-size: 14px; white-space: nowrap;" valign="middle" align="center">
+                                               <i>$[metaDataProperty.AnyMetaData.comment]</i>
+                                            </td>
+                                            <td width="96">
+                                               <a style="display: block;height: 35px; float: left; width: 96px;background-color: #ffc046;text-align: center; text-decoration: none; color: #000000;" href="http:$[metaDataProperty.AnyMetaData.link]"><div style="margin-top:8px;">Подробнее</div></a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                        </body>
+
+]]>
+            </repr:text>
+        </repr:Template>
+    </repr:Representation>
+
+    <ymaps:GeoObjectCollection>
+        <gml:featureMembers>
+            <ymaps:GeoObjectCollection>
+                <gml:name>Известные памятники</gml:name>
+                <gml:featureMembers>
+                    <ymaps:GeoObject>
+                        <gml:name>Монумент "Родина-Мать"</gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.563022 50.426472</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name>Памятник "Богдану Хмельницкому"</gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment></comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.516489 50.45351</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name>Арка Дружбы народов</gml:name>
+                        <gml:description></gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>#</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.529874 50.454433</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                </gml:featureMembers>
+                <ymaps:style>#customStyle</ymaps:style>
+            </ymaps:GeoObjectCollection>
+
+            <ymaps:GeoObjectCollection>
+                <gml:name>Известные памятники22</gml:name>
+                <gml:featureMembers>
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.60791 50.50955</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.521708 50.429083</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.498271 50.450843</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                </gml:featureMembers>
+                <ymaps:style>#customStyle</ymaps:style>
+            </ymaps:GeoObjectCollection>
+
+            <ymaps:GeoObjectCollection>
+                <gml:name>Оригинальные музейчики</gml:name>
+                <gml:featureMembers>
+                    <ymaps:GeoObject>
+                        <gml:name>Музей грамзаписи и старинных музыкальных инструментов</gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.520163 50.443334</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name>Музей истории медицины или Анатомический театр</gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.505269 50.446977</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name>Музей воды. Водно-информационный центр</gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.530889 50.452512</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                </gml:featureMembers>
+                <ymaps:style>#customStyle</ymaps:style>
+            </ymaps:GeoObjectCollection>
+
+            <ymaps:GeoObjectCollection>
+                <gml:name>Красивости</gml:name>
+                <gml:featureMembers>
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.516174 50.45987</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.528598 50.445049</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                    <ymaps:GeoObject>
+                        <gml:name></gml:name>
+                        <gml:description>-85% на комплексное офтальмологическое обследование, консультацию детского или взрослого офтальмолога и психологическую диагностику зрения</gml:description>
+                        <gml:metaDataProperty>
+                            <AnyMetaData>
+                                <link>//yandex.ru</link>
+                                <comment>300 руб. скидка 50%</comment>
+                            </AnyMetaData>
+                        </gml:metaDataProperty>
+                        <gml:Point>
+                            <gml:pos>30.511809 50.449156</gml:pos>
+                        </gml:Point>
+                    </ymaps:GeoObject>
+
+                </gml:featureMembers>
+                <ymaps:style>#customStyle</ymaps:style>
+            </ymaps:GeoObjectCollection>
+        </gml:featureMembers>
+    </ymaps:GeoObjectCollection>
+</ymaps:ymaps>

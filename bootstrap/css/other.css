@@ -1,0 +1,32 @@
+.table th a {
+    color: #333;
+    border-bottom: 1px dotted #333;
+}
+.table th a:hover {
+    text-decoration: none;
+    border-bottom: 0px;
+}
+
+.filters {
+    background-color: #f5f5f5;
+}
+
+.filters input[type=text] {
+    height: 10px;
+    width: 80%;
+    margin-top: 5px;
+}
+
+.addressItemAction {
+    text-decoration: none;
+    font-size: 11px;
+    margin-left: 10px;
+}
+
+.form-horizontal textarea {
+    height: 55px;
+}
+
+#addressList div {
+    margin-top: 10px;
+}

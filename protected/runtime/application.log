@@ -1,0 +1,251 @@
+2012/09/14 20:10:21 [error] [exception.CException] exception 'CException' with message 'Псевдоним "application.components.shoppingCart.EShoppingCart" неверен. Убедитесь, что он указывает на существующий PHP файл.' in /var/www/Reddot/Reddot/framework/YiiBase.php:318
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/YiiBase.php(198): YiiBase::import('application.com...', true)
+#1 /var/www/Reddot/Reddot/framework/base/CModule.php(387): YiiBase::createComponent(Array)
+#2 /var/www/Reddot/Reddot/framework/base/CModule.php(493): CModule->getComponent('shoppingCart')
+#3 /var/www/Reddot/Reddot/framework/base/CApplication.php(146): CModule->preloadComponents()
+#4 /var/www/Reddot/Reddot/framework/YiiBase.php(127): CApplication->__construct('/var/www/Reddot...')
+#5 /var/www/Reddot/Reddot/framework/YiiBase.php(100): YiiBase::createApplication('CWebApplication', '/var/www/Reddot...')
+#6 /var/www/Reddot/Reddot/index.php(28): YiiBase::createWebApplication('/var/www/Reddot...')
+#7 {main}
+REQUEST_URI=/
+---
+2012/09/14 20:14:05 [error] [exception.CException] exception 'CException' with message 'Путь CAssetManager.basePath "/var/www/Reddot/Reddot/assets" задан неверно. Удостоверьтесь, что директория существует и доступна для записи пользователю, под которым запущен веб-сервер.' in /var/www/Reddot/Reddot/framework/web/CAssetManager.php:116
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CAssetManager.php(101): CAssetManager->setBasePath('/var/www/Reddot...')
+#1 /var/www/Reddot/Reddot/framework/web/CAssetManager.php(188): CAssetManager->getBasePath()
+#2 /var/www/Reddot/Reddot/framework/web/helpers/CHtml.php(1067): CAssetManager->publish('/var/www/Reddot...', false)
+#3 /var/www/Reddot/Reddot/framework/web/widgets/pagers/CLinkPager.php(192): CHtml::asset('/var/www/Reddot...')
+#4 /var/www/Reddot/Reddot/framework/web/widgets/pagers/CLinkPager.php(182): CLinkPager::registerCssFile(NULL)
+#5 /var/www/Reddot/Reddot/protected/components/LinkPager.php(13): CLinkPager->registerClientScript()
+#6 /var/www/Reddot/Reddot/framework/web/CBaseController.php(174): LinkPager->run()
+#7 /var/www/Reddot/Reddot/protected/components/ListView.php(30): CBaseController->widget('LinkPager', Array)
+#8 /var/www/Reddot/Reddot/framework/zii/widgets/CBaseListView.php(158): ListView->renderPager()
+#9 [internal function]: CBaseListView->renderSection(Array)
+#10 /var/www/Reddot/Reddot/framework/zii/widgets/CBaseListView.php(141): preg_replace_callback('/{(\w+)}/', Array, '{items}<br />{p...')
+#11 /var/www/Reddot/Reddot/framework/zii/widgets/CBaseListView.php(126): CBaseListView->renderContent()
+#12 /var/www/Reddot/Reddot/framework/web/CBaseController.php(174): CBaseListView->run()
+#13 /var/www/Reddot/Reddot/protected/views/acts/_listView.php(37): CBaseController->widget('ListView', Array)
+#14 /var/www/Reddot/Reddot/framework/web/CBaseController.php(127): require('/var/www/Reddot...')
+#15 /var/www/Reddot/Reddot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/Reddot...', Array, true)
+#16 /var/www/Reddot/Reddot/framework/web/CController.php(870): CBaseController->renderFile('/var/www/Reddot...', Array, true)
+#17 /var/www/Reddot/Reddot/protected/views/acts/index.php(13): CController->renderPartial('_listView', Array)
+#18 /var/www/Reddot/Reddot/framework/web/CBaseController.php(127): require('/var/www/Reddot...')
+#19 /var/www/Reddot/Reddot/framework/web/CBaseController.php(96): CBaseController->renderInternal('/var/www/Reddot...', Array, true)
+#20 /var/www/Reddot/Reddot/framework/web/CController.php(870): CBaseController->renderFile('/var/www/Reddot...', Array, true)
+#21 /var/www/Reddot/Reddot/framework/web/CController.php(783): CController->renderPartial('index', Array, true)
+#22 /var/www/Reddot/Reddot/protected/controllers/ActsController.php(189): CController->render('index', Array)
+#23 /var/www/Reddot/Reddot/framework/web/actions/CInlineAction.php(50): ActsController->actionIndex()
+#24 /var/www/Reddot/Reddot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#25 /var/www/Reddot/Reddot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#26 /var/www/Reddot/Reddot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#27 /var/www/Reddot/Reddot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#28 /var/www/Reddot/Reddot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#29 /var/www/Reddot/Reddot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#30 /var/www/Reddot/Reddot/framework/web/CController.php(292): CFilterChain->run()
+#31 /var/www/Reddot/Reddot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#32 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(276): CController->run('')
+#33 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#34 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#35 /var/www/Reddot/Reddot/index.php(28): CApplication->run()
+#36 {main}
+REQUEST_URI=/
+---
+2012/09/14 20:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/14 20:21:05 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/14 20:21:09 [warning] [application] Не удалось присвоить небезопасный атрибут "actName" класса "ActSearchForm".
+2012/09/14 20:21:09 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/550x315/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/550x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/550x315/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/qweqwe
+---
+2012/09/14 20:21:10 [warning] [application] Не удалось присвоить небезопасный атрибут "actName" класса "Act".
+2012/09/14 20:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/map
+---
+2012/09/14 20:21:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/map
+---
+2012/09/14 20:22:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/e18642d45c4ca9c321bd9a00ad42ac24.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/e18642d45c4ca9c321bd9a00ad42ac24.jpg
+HTTP_REFERER=http://dev.reddot.com/archive
+---
+2012/09/14 20:22:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/archive
+---
+2012/09/14 20:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/e18642d45c4ca9c321bd9a00ad42ac24.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/e18642d45c4ca9c321bd9a00ad42ac24.jpg
+HTTP_REFERER=http://dev.reddot.com/archive
+---
+2012/09/14 20:22:13 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/archive
+---
+2012/09/14 20:22:18 [warning] [application] Не удалось присвоить небезопасный атрибут "ActSearchForm" класса "ActSearchForm".
+2012/09/14 20:22:18 [warning] [application] Не удалось присвоить небезопасный атрибут "ActSearchForm" класса "ActSearchForm".
+2012/09/14 20:22:22 [warning] [application] Не удалось присвоить небезопасный атрибут "ActSearchForm" класса "ActSearchForm".
+2012/09/14 20:22:22 [warning] [application] Не удалось присвоить небезопасный атрибут "ActSearchForm" класса "ActSearchForm".
+2012/09/14 20:22:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:49 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:50 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:53 [warning] [application] Не удалось присвоить небезопасный атрибут "actName" класса "ActSearchForm".
+2012/09/14 20:22:53 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/550x315/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/550x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/550x315/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/qweqwe
+---
+2012/09/14 20:22:53 [warning] [application] Не удалось присвоить небезопасный атрибут "actName" класса "Act".
+2012/09/14 20:22:54 [warning] [application] Не удалось присвоить небезопасный атрибут "actName" класса "ActSearchForm".
+2012/09/14 20:22:56 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:22:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:23:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:23:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
+2012/09/14 20:23:08 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index
+---
