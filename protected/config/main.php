@@ -103,11 +103,18 @@ return array(
             ),
         ),
         // uncomment the following to use a MySQL database
-        'db' => array(
+        /*'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=reddot',
             'emulatePrepare' => true,
             'username' => 'root',
             'password' => 'root',
+            'charset' => 'utf8',
+        ),*/
+        'db' => array(
+            'connectionString' => 'mysql:host=mysql16.000webhost.com;dbname=a2203413_reddot',
+            'emulatePrepare' => true,
+            'username' => 'a2203413_reddot',
+            'password' => 'aUNJnb^7h^%$R%Y&Ids',
             'charset' => 'utf8',
         ),
         'errorHandler' => array(
