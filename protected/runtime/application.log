@@ -491,3 +491,350 @@ Stack trace:
 #3 {main}
 REQUEST_URI=/favicon.ico
 ---
+2012/09/17 19:40:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection не удалось открыть соединение с базой данных: SQLSTATE[HY000] [2013] Lost connection to MySQL server at 'reading initial communication packet', system error: 110' in /var/www/Reddot/Reddot/framework/db/CDbConnection.php:382
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/db/CDbConnection.php(331): CDbConnection->open()
+#1 /var/www/Reddot/Reddot/framework/db/CDbConnection.php(309): CDbConnection->setActive(true)
+#2 /var/www/Reddot/Reddot/framework/base/CModule.php(388): CDbConnection->init()
+#3 /var/www/Reddot/Reddot/framework/base/CApplication.php(431): CModule->getComponent('db')
+#4 /var/www/Reddot/Reddot/framework/db/ar/CActiveRecord.php(615): CApplication->getDb()
+#5 /var/www/Reddot/Reddot/framework/db/ar/CActiveRecord.php(2263): CActiveRecord->getDbConnection()
+#6 /var/www/Reddot/Reddot/framework/db/ar/CActiveRecord.php(379): CActiveRecordMetaData->__construct(Object(Act))
+#7 /var/www/Reddot/Reddot/framework/db/ar/CActiveRecord.php(394): CActiveRecord::model('Act')
+#8 /var/www/Reddot/Reddot/framework/db/ar/CActiveRecord.php(78): CActiveRecord->getMetaData()
+#9 /var/www/Reddot/Reddot/protected/controllers/ActsController.php(175): CActiveRecord->__construct('search')
+#10 /var/www/Reddot/Reddot/framework/web/actions/CInlineAction.php(50): ActsController->actionIndex()
+#11 /var/www/Reddot/Reddot/framework/web/CController.php(309): CInlineAction->runWithParams(Array)
+#12 /var/www/Reddot/Reddot/framework/web/filters/CFilterChain.php(134): CController->runAction(Object(CInlineAction))
+#13 /var/www/Reddot/Reddot/framework/web/filters/CFilter.php(41): CFilterChain->run()
+#14 /var/www/Reddot/Reddot/framework/web/CController.php(1146): CFilter->filter(Object(CFilterChain))
+#15 /var/www/Reddot/Reddot/framework/web/filters/CInlineFilter.php(59): CController->filterAccessControl(Object(CFilterChain))
+#16 /var/www/Reddot/Reddot/framework/web/filters/CFilterChain.php(131): CInlineFilter->filter(Object(CFilterChain))
+#17 /var/www/Reddot/Reddot/framework/web/CController.php(292): CFilterChain->run()
+#18 /var/www/Reddot/Reddot/framework/web/CController.php(266): CController->runActionWithFilters(Object(CInlineAction), Array)
+#19 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(276): CController->run('')
+#20 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('')
+#21 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#22 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#23 {main}
+REQUEST_URI=/
+---
+2012/09/17 19:40:40 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 19:41:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 19:55:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 19:55:04 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 19:59:38 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 19:59:39 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 20:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index.php
+---
+2012/09/17 20:00:20 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index.php
+---
+2012/09/17 20:11:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 20:11:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 20:11:16 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 20:11:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 20:11:17 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index.php
+---
+2012/09/17 20:11:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/index.php
+---
+2012/09/17 20:22:23 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:25:54 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:27:35 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:30:54 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 20:30:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 20:30:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 20:30:55 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 20:32:31 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:33:27 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:50:35 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:50:38 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:50:55 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:51:14 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:52:20 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 20:55:02 [warning] [application] Не удалось присвоить небезопасный атрибут "addressList" класса "User".
+2012/09/17 21:11:10 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 21:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:11:11 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:11:14 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:11:15 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 21:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 21:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:24:03 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:24:07 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 21:34:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:34:01 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 21:34:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 21:34:02 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 22:03:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 22:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---
+2012/09/17 22:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "favicon.ico".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('favicon.ico')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/favicon.ico
+---
+2012/09/17 22:03:34 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Невозможно обработать запрос "upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg".' in /var/www/Reddot/Reddot/framework/web/CWebApplication.php:280
+Stack trace:
+#0 /var/www/Reddot/Reddot/framework/web/CWebApplication.php(135): CWebApplication->runController('upload/act/340x...')
+#1 /var/www/Reddot/Reddot/framework/base/CApplication.php(162): CWebApplication->processRequest()
+#2 /var/www/Reddot/Reddot/index.php(13): CApplication->run()
+#3 {main}
+REQUEST_URI=/upload/act/340x185/1000/f2399034f3fcf10ccebd435920a30450.jpg
+HTTP_REFERER=http://dev.reddot.com/
+---

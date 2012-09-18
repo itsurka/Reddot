@@ -2,7 +2,18 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$/../.." vcs="Git" />
-    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../DKorolevStudio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../DKorolevStudio/art-project" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../DKorolevStudio/dk" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../Mobiles" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../Mobiles/Mobiles" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../dev.reddot.com" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../dev.reddot.com/reddot" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../dev.ti-project3-remote.com" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../dev.ti-project3-remote.com/ti-project3" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../dev.ti-project3.com" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../doska/doska" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../../ti-project4/ti-project4" vcs="Git" />
   </component>
 </project>
 

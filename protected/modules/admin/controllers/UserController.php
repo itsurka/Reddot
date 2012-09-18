@@ -69,8 +69,6 @@ class UserController extends Controller {
 
         if (isset($_POST['User'])) {
             $model->setAttributes($_POST['User']);
-
-            $model->lastpasswordchange = time();
             if ($model->save()) {
                 if (!empty($model->delete_avatar))
                     $model->deleteAvatar();

@@ -127,10 +127,12 @@ class User extends CActiveRecord {
     }
 
     public function checkPattern() {
-        foreach ($this->addressList as $item) {
-            if (!preg_match($this->addressPattern, $item['address'])) {
-                $this->addError('address', 'Адрес не соответствует шаблону');
-                break;
+        if ($this->role === 'organization') {
+            foreach ($this->addressList as $item) {
+                if (!preg_match($this->addressPattern, $item['address'])) {
+                    $this->addError('address', 'Адрес не соответствует шаблону');
+                    break;
+                }
             }
         }
     }
@@ -310,6 +312,13 @@ class User extends CActiveRecord {
                 $this->password = $this->password2 = $this->initialPassword;
             }
 
+            $this->address = json_encode($this->addressList);
+            return true;
+        }
+    }
+
+    public function beforeValidate() {
+        if (parent::beforeValidate()) {
             $this->address = json_encode($this->addressList);
             return true;
         }

@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/config/main.php" afterPath="$PROJECT_DIR$/protected/config/main.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/runtime/application.log" afterPath="$PROJECT_DIR$/protected/runtime/application.log" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../doska/doska/sitemap/sitemap-catalog.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../../doska/doska/sitemap/sitemap-main.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.ti-project3-remote.com/ti-project3" afterPath="$PROJECT_DIR$/../../dev.ti-project3-remote.com/ti-project3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../DKorolevStudio/dk/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../DKorolevStudio/dk/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/css/style.css" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/css/style.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/js/script.js" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/js/script.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/IEDiscount.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/IEDiscount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/actions/AddToBasket.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/actions/AddToBasket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/discounts/TestDiscount.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/shoppingCart/discounts/TestDiscount.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/widgets/views/buy_button.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/components/widgets/views/buy_button.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/config/main.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/config/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/controllers/ActsController.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/controllers/ActsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/models/Act.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/models/Act.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/views/layouts/main.php" afterPath="$PROJECT_DIR$/../../dev.reddot.com/reddot/protected/views/layouts/main.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../ti-project4/ti-project4/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../ti-project4/ti-project4/.idea/workspace.xml" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -28,7 +38,35 @@
     <favorites_list name="Reddot" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="main.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/config/main.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="119" column="12" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="5" selection-start="475" selection-end="475" vertical-scroll-proportion="0.017462166">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/models/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="136" column="0" selection-start="4361" selection-end="4361" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -46,9 +84,11 @@
         <option value="$PROJECT_DIR$/echo.php" />
         <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
         <option value="$PROJECT_DIR$/protected/models/Act.php" />
-        <option value="$PROJECT_DIR$/protected/config/main.php" />
         <option value="$PROJECT_DIR$/protected/components/Controller.php" />
         <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/protected/config/main.php" />
+        <option value="$PROJECT_DIR$/protected/models/User.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php" />
       </list>
     </option>
   </component>
@@ -78,6 +118,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
@@ -99,7 +140,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -220,6 +260,9 @@
     <list size="0" />
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="ALPHA_COMPARATOR,Show Inherited" />
+  </component>
   <component name="SvnConfiguration" maxAnnotateRevisions="500">
     <option name="USER" value="" />
     <option name="PASSWORD" value="" />
@@ -246,16 +289,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1922" height="1037" extended-state="6" />
+    <frame x="-1" y="24" width="1922" height="1037" extended-state="7" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18813469" sideWeight="0.9921082" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2143239" sideWeight="0.7981962" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19027258" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2143239" sideWeight="0.19278467" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -311,31 +354,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../doska/doska/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="14" selection-start="234" selection-end="234" vertical-scroll-proportion="0.23353294" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/readme_ru.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="42" selection-start="534" selection-end="534" vertical-scroll-proportion="0.21420257" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="214" column="27" selection-start="6726" selection-end="6726" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/PageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
@@ -373,30 +391,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/actions/XUploadAction.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="41" selection-start="429" selection-end="429" vertical-scroll-proportion="-1.4361702">
-          <folding />
-        </state>
+        <state line="12" column="41" selection-start="429" selection-end="429" vertical-scroll-proportion="-1.4361702" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="34" selection-start="40" selection-end="40" vertical-scroll-proportion="0.017462166">
-          <folding />
-        </state>
+        <state line="1" column="34" selection-start="40" selection-end="40" vertical-scroll-proportion="0.017462166" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/Controller.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="5" selection-start="399" selection-end="399" vertical-scroll-proportion="0.24447031">
-          <folding />
-        </state>
+        <state line="14" column="5" selection-start="399" selection-end="399" vertical-scroll-proportion="0.24447031" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/base/CModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="29" selection-start="1230" selection-end="1230" vertical-scroll-proportion="-7.175786" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demos/blog/protected/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="6" selection-start="13" selection-end="13" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/user/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="15" selection-start="375" selection-end="375" vertical-scroll-proportion="0.3480663" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/config/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="93" column="37" selection-start="3402" selection-end="3402" vertical-scroll-proportion="0.23166473">
+        <state line="119" column="12" selection-start="4541" selection-end="4541" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="5" selection-start="475" selection-end="475" vertical-scroll-proportion="0.017462166">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="0" selection-start="4361" selection-end="4361" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
   </component>
