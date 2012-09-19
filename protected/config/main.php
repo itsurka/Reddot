@@ -109,6 +109,7 @@ return array(
             'username' => 'root',
             'password' => 'root',
             'charset' => 'utf8',
+            'initSQLs'=>array("set time_zone='+03:00';"),
         ),
         /*'db' => array(
             'connectionString' => 'mysql:host=mysql16.000webhost.com;dbname=a2203413_reddot',
