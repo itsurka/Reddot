@@ -39,7 +39,7 @@
                     <td class="gd_elem_info_brd_dtt" width="10"></td>
                     <td valign="top">
                         <div><b>Осталось</b></div>
-                        <a class="d_elem_info_nm_kupon" href="#"><?php echo $data->coupon_count; ?> купонов</a>
+                        <a class="d_elem_info_nm_kupon" href="#"><?php echo $data->coupon_count - $data->coupon_purchased; ?> купонов</a>
                     </td>
                 <?php else: ?>
                     <td width="125" valign="top">

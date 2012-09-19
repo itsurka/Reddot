@@ -69,7 +69,7 @@ class Act extends CActiveRecord implements IECartPosition {
             array('short_url', 'match', 'pattern' => $this->shortUrlPattern, 'allowEmpty' => false, 'message' => 'ЧПУ содержит не допустимые символы. Разрешается использовать: a-z A-Z - _'),
             array('name_act, price_new_description, seo_title, seo_keywords, seo_description', 'length', 'max' => 500),
             array('short_url', 'length', 'max' => 32),
-            array('photo_act', 'file', 'types' => 'jpg, gif, png', "allowEmpty" => true),
+            array('photo_act', 'file', 'types' => 'jpg, jpeg, gif, png', "allowEmpty" => true),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
             array('id_act, filter, id_tag_act, orgNameSearch, name_act, short_text_act, id_org_act, id_town_act, coupon_count, is_bonus, date_start_act, date_end_act, date_end_coupon_act', 'safe', 'on' => 'search'),
@@ -151,7 +151,7 @@ class Act extends CActiveRecord implements IECartPosition {
         if (!Yii::app()->controller->module) {
             $limit = ($limit == '') ? self::ITEMS_PER_PAGE : $limit;
             $criteria = new CDbCriteria;
-
+//            $criteria->select = 'NOW() AS terms';
             $criteria->compare('id_act', $this->id_act);
             $criteria->compare('id_themes_act', $this->id_themes_act);
             if ($addCondition) {
@@ -213,10 +213,11 @@ class Act extends CActiveRecord implements IECartPosition {
         if (!in_array($type, $this->imageAvailableSizes))
             throw new Exception("Unknown avatar type");
         else {
-            if (!is_dir($_SERVER["DOCUMENT_ROOT"] . "/upload/act/" . $type . "/" . $this->getCurrentOrder()))
-                mkdir($_SERVER["DOCUMENT_ROOT"] . "/upload/act/" . $type . "/" . $this->getCurrentOrder(), 0777, true);
+            if (!is_dir(Yii::getPathOfAlias('webroot') . "/upload/act/" . $type . "/" . $this->getCurrentOrder())) {
+                mkdir(Yii::getPathOfAlias('webroot') . "/upload/act/" . $type . "/" . $this->getCurrentOrder(), 0777, true);
+            }
 
-            return $_SERVER["DOCUMENT_ROOT"] . "/upload/act/" . $type . "/" . $this->getCurrentOrder() . "/" . $md5_hash . ".jpg";
+            return Yii::getPathOfAlias('webroot') . "/upload/act/" . $type . "/" . $this->getCurrentOrder() . "/" . $md5_hash . ".jpg";
         }
     }
 
@@ -236,6 +237,7 @@ class Act extends CActiveRecord implements IECartPosition {
         if (!empty($this->photo_act->tempName)) {
             $orig_save_path = $this->getPictureSavePath(md5_file($this->photo_act->tempName), "original");
             $this->photo_act->saveAs($orig_save_path);
+
             // 550x315
             $resize_save_path = $this->getPictureSavePath(md5_file($orig_save_path), "550x315");
             WideImage::load($orig_save_path)->resize(550, 315, 'outside')->saveToFile($resize_save_path);
