@@ -27,7 +27,7 @@
                                                 <b><?php echo Yii::app()->user->getBalance(); ?> р.</b>
                                             </td>
                                             <td>
-                                                <a class="money_have_butt" href="#" onclick="show_replenishment();">
+                                                <a class="money_have_butt" href="#" onclick="<?php if(!Yii::app()->user->isGuest) echo 'show_replenishment();'; else echo 'show_login(2); return false;'; ?>">
                                                    <span>Пополнить</span>
                                                 </a>
                                             </td>
