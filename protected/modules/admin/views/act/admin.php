@@ -78,7 +78,14 @@
         </div>
     </div>
 </div>
-
+<style type="text/css">
+    a.clone_btn{
+        background: url("/images/ico_prof_popoln_plus.png") top center no-repeat;
+        display: inline-block;
+        width: 10px;
+        height: 10px;
+    }
+</style>
 <script type="text/javascript">
     function cloneAct(actID) {
         $.ajax({

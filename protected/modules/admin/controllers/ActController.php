@@ -195,8 +195,12 @@ class ActController extends Controller {
         $act = $this->loadModel($id);
         $cloneAct = new Act();
         $cloneAct->paid = $act->paid;
-        $cloneAct->name_act = $act->name_act . '(Копия)';
-        $cloneAct->short_url = $act->short_url . '(Копия)';
+        $cloneAct->name_act = $act->name_act . '...(Копия)';
+        $short_url = $act->short_url;
+        if((strlen($short_url)+strlen('(Копия)')) > 32)
+            $short_url = substr($short_url, 0, strlen($short_url)-strlen('(Копия)'));
+        $short_url = substr($short_url, 0, strlen($short_url)-3);
+        $cloneAct->short_url = $short_url . '...(Копия)';
         $cloneAct->seo_title = $act->seo_title;
         $cloneAct->seo_keywords = $act->seo_keywords;
         $cloneAct->seo_description = $act->seo_description;
