@@ -48,6 +48,10 @@
                     'class' => 'CButtonColumn',
                     'template' => '{update}',
                 ),
+                array(
+                    'type' => 'raw',
+                    'value' => 'CHtml::link("", "#", array("onclick"=>"cloneAct($data->id);", "class"=>"clone_btn", "title"=>"Клонировать"));',
+                ),
             ),
         ));
         ?>
@@ -74,3 +78,16 @@
         </div>
     </div>
 </div>
+
+<script type="text/javascript">
+    function cloneAct(actID) {
+        $.ajax({
+            url: '/admin/act/clone/id/' + actID,
+            type: 'POST',
+            success: function() {
+                $('#grid').yiiGridView.update('grid');
+            }
+        });
+
+    }
+</script>

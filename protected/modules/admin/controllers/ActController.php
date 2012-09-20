@@ -191,4 +191,36 @@ class ActController extends Controller {
         }
     }
 
+    public function actionClone($id) {
+        $act = $this->loadModel($id);
+        $cloneAct = new Act();
+        $cloneAct->paid = $act->paid;
+        $cloneAct->name_act = $act->name_act . '(Копия)';
+        $cloneAct->short_url = $act->short_url . '(Копия)';
+        $cloneAct->seo_title = $act->seo_title;
+        $cloneAct->seo_keywords = $act->seo_keywords;
+        $cloneAct->seo_description = $act->seo_description;
+        $cloneAct->url_name = $act->url_name;
+        $cloneAct->photo_act = md5($act->photo_act);
+        $cloneAct->clonePictures($act->photo_act, md5($act->photo_act));
+        $cloneAct->short_text_act = $act->short_text_act;
+        $cloneAct->terms = $act->terms;
+        $cloneAct->id_org_act = $act->id_org_act;
+        $cloneAct->id_themes_act = $act->id_themes_act;
+        $cloneAct->id_tag_act = $act->id_tag_act;
+        $cloneAct->price_old = $act->price_old;
+        $cloneAct->price_new = $act->price_new;
+        $cloneAct->price_new_description = $act->price_new_description;
+        $cloneAct->coupon_count = $act->coupon_count;
+        $cloneAct->coupon_purchased = 0;
+        $cloneAct->coupon_need = $act->coupon_need;
+        $cloneAct->is_bonus = $act->is_bonus;
+        $cloneAct->date_start_act = $act->date_start_act;
+        $cloneAct->date_end_act = $act->date_end_act;
+        $cloneAct->date_end_coupon_act = $act->date_end_coupon_act;
+        $cloneAct->full_text_act = $act->full_text_act;
+        $cloneAct->id_town_act = $act->id_town_act;
+        $a = $cloneAct->save();
+        var_dump($a, $cloneAct->getErrors());
+    }
 }

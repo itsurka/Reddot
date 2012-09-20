@@ -2,13 +2,7 @@
 <project version="4">
   <component name="PhpProjectConfiguration">
     <sdk>
-      <PhpSdkConfig version="5.3.2-1ubuntu4.17">
-        <include_paths>
-          <path value="." />
-          <path value="/usr/share/php" />
-          <path value="/usr/share/pear" />
-        </include_paths>
-      </PhpSdkConfig>
+      <PhpSdkConfig version="5.3.2-1ubuntu4.18" home="/usr/bin" />
     </sdk>
   </component>
 </project>

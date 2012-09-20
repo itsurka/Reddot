@@ -260,6 +260,30 @@ class Act extends CActiveRecord implements IECartPosition {
         }
     }
 
+    public function clonePictures($image, $cloneImage) {
+        $image .= '.jpg';
+        $cloneImage .= '.jpg';
+
+        $sizes = array(
+            '550x315',
+            '340x185',
+            '200x200',
+            '185x100',
+            '120x214',
+            'original',
+            'resized',
+        );
+
+        foreach ($sizes as $eachSize) {
+            $dir = Yii::getPathOfAlias('webroot.upload.act') . '/' . $eachSize . '/' . $this->getCurrentOrder() . '/';
+            $imageSource = $dir . $image;
+            $imageDest = $dir . $cloneImage;
+            if(!is_dir($dir))
+                mkdir($dir . 0777, true);
+            copy($imageSource, $imageDest);
+        }
+    }
+
     public function deletePicture() {
         $photo_act = $this->photo_act;
         if (!empty($this->photo_act))
