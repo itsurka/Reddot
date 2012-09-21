@@ -83,7 +83,7 @@ class Operation extends CActiveRecord {
         // NOTE: you may need to adjust the relation name and the related
         // class name for the relations automatically generated below.
         return array(
-            'user' => '',
+//            'user' => self::BELONGS_TO, 'User', 'user_id',
         );
     }
 
@@ -183,7 +183,7 @@ class Operation extends CActiveRecord {
      * @param array $purchases товары, которые пользователь хоче приобрести
      * @return array возвращаем массив проведенных операций для отображения пользователю
      */
-    public function paymentPurchase($purchases, $user) {
+    /*public function paymentPurchase($purchases, $user) {
         $operations = array();
 
         // Проходимся по всем позициям
@@ -222,6 +222,72 @@ class Operation extends CActiveRecord {
                         // Накручиваем ко-во купленных купонов
                         $item->act->coupon_purchased++;
                         $item->act->save();
+                    }
+                } else {
+                    $operationAttributes['status'] = self::STATUS_FAIL;
+                    $operationAttributes['extra'] = $hasErrors;
+                }
+
+                // Добавляем запись операции в таблицу
+                $operations[] = Operation::model()->addLog($operationAttributes);
+            }
+        }
+
+        // Возвращаем произведенные операции
+        return $operations;
+    }*/
+
+    /**
+     * Оплачиваем покупки из корзины.
+     *
+     * Оплата производится непосредственно со счета пользователя
+     * @return array возвращаем массив проведенных операций для отображения пользователю
+     */
+    public function paymentPurchase() {
+        $extra = ''; // Сообщение в случае ошибки
+        $purchases = Yii::app()->shoppingCart->getPositions();
+        $operations = array();
+        $user = User::model()->findByPk(Yii::app()->user->id);
+
+        // Проходимся по всем позициям
+        foreach ($purchases as $item) {
+            $quantity = $item['quantity'];
+            $item = Coupon::model()->findByPk($item['id']);
+            // Проходимся по всем элементам позиции (в позиции может быть больше одного купона)
+            for ($i = 0; $i < $quantity; $i++) {
+                // Для добавления в историю операций
+                $operationAttributes = array(
+                    'title' => 'Оплата товара',
+                    'description' => $item->getTitle(),
+                    'user_id' => $user->id,
+                    'summ' => $item->getPrice(),
+                    'type' => self::TYPE_PAYMENT_PURCHASE,
+                    'object_type' => 'Acts',
+                    'object_id' => $item->id,
+                );
+
+                // Создаем новую покупку
+                $purchase = new Purchase();
+                $purchase->user_id = $user->id;
+                $purchase->act_id = $item->id;
+                $purchase->secret_key = $purchase->getUniqueKey();
+                $purchase->status = Purchase::STATUS_NOT_ACTIVATED;
+                $purchase->org_id = $item->act->id_org_act;
+                $hasErrors = $this->purchaseHasErrors($user, $item);
+                if ($hasErrors == false) {
+                    // Если не возникло ошибок, то списываем деньги со счета пользователя
+                    if ($purchase->hasErrors() == false && $purchase->save()) {
+                        $user->balance -= $item->getPrice();
+                        $user->save();
+
+                        // Покупка прошла успешно. Устанавливаем соответствующий статус для операции
+                        $operationAttributes['status'] = self::STATUS_SUCCESS;
+                        // Накручиваем ко-во купленных купонов
+                        $item->act->coupon_purchased++;
+                        $item->act->save();
+
+                        // Удаляем эту покупку с корзины и берем пиво =)
+                        Yii::app()->shoppingCart->remove($item->id);
                     }
                 } else {
                     $operationAttributes['status'] = self::STATUS_FAIL;

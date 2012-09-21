@@ -2,8 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" afterPath="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/widgets/Basket.php" afterPath="$PROJECT_DIR$/protected/components/widgets/Basket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php" afterPath="$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/OperationController.php" afterPath="$PROJECT_DIR$/protected/controllers/OperationController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/UserController.php" afterPath="$PROJECT_DIR$/protected/controllers/UserController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Operation.php" afterPath="$PROJECT_DIR$/protected/models/Operation.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/user/_couponPopup.php" afterPath="$PROJECT_DIR$/protected/views/user/_couponPopup.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/user/_purchaseItemView.php" afterPath="$PROJECT_DIR$/protected/views/user/_purchaseItemView.php" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,37 +33,46 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="admin.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/admin.php">
+      <file leaf-file-name="profile.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/views/layouts/profile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="81" column="14" selection-start="3148" selection-end="3148" vertical-scroll-proportion="-26.041666">
+            <state line="120" column="64" selection-start="3821" selection-end="3834" vertical-scroll-proportion="-13.916667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php">
+      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="199" column="48" selection-start="6250" selection-end="6250" vertical-scroll-proportion="0.45867288">
+            <state line="169" column="0" selection-start="5793" selection-end="5793" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Act.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Act.php">
+      <file leaf-file-name="_couponPopup.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/views/user/_couponPopup.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="265" column="0" selection-start="11544" selection-end="11544" vertical-scroll-proportion="0.0">
+            <state line="52" column="0" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.7664671">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/assets/5c1bef54/gridview/styles.css">
+      <file leaf-file-name="QRCodeGenerator.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/extensions/qrcode/QRCodeGenerator.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="1" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.0">
+            <state line="49" column="5" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/extensions/qrcode/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="10" selection-start="282" selection-end="289" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -76,22 +92,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/views/layouts/column2.php" />
-        <option value="$PROJECT_DIR$/protected/views/acts/view.php" />
-        <option value="$PROJECT_DIR$/protected/views/acts/_buyButton.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
-        <option value="$PROJECT_DIR$/protected/config/main.php" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/protected/views/acts/_itemView.php" />
-        <option value="$PROJECT_DIR$/protected/extensions/EWideImage/WideImage.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/BuyController.php" />
-        <option value="$PROJECT_DIR$/protected/views/layouts/main.php" />
-        <option value="$PROJECT_DIR$/css/main.css" />
-        <option value="$PROJECT_DIR$/css/other.css" />
-        <option value="$PROJECT_DIR$/protected/models/Act.php" />
-        <option value="$PROJECT_DIR$/assets/5c1bef54/gridview/styles.css" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
+        <option value="$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/framework/yiilite.php" />
+        <option value="$PROJECT_DIR$/framework/db/ar/CActiveRecord.php" />
+        <option value="$PROJECT_DIR$/protected/views/user/_purchaseItemView.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
+        <option value="$PROJECT_DIR$/protected/components/widgets/views/basket_small.php" />
+        <option value="$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php" />
+        <option value="$PROJECT_DIR$/protected/components/widgets/Basket.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/OperationController.php" />
+        <option value="$PROJECT_DIR$/protected/models/Operation.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/protected/extensions/qrcode/QRCodeGenerator.php" />
+        <option value="$PROJECT_DIR$/protected/views/user/_couponPopup.php" />
       </list>
     </option>
   </component>
@@ -122,6 +138,7 @@
     </navigator>
     <panes>
       <pane id="Favorites" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,7 +185,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="extensions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -186,56 +203,36 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
+              <option name="myItemId" value="extensions" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Reddot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Reddot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="protected" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modules" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="qrcode" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="true" />
-    <property name="options.lastSelected" value="reference.webide.settings.project.settings.php" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../doska/doska/protected/config" />
-    <property name="options.searchVisible" value="true" />
-    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.lastSelected" value="editing.templates" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ReddotOriginal/reddot/protected/models" />
     <property name="GoToClass.includeJavaFiles" value="false" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="PublishConfig" serverName="dev.reddot.com" serverId="9d12837f-946a-4f26-9a4a-b29dc87dab89">
     <servers>
+      <server id="507dd9fd-4a57-404e-9290-7fbbff7b2bba">
+        <serverdata>
+          <mappings>
+            <mapping local="$PROJECT_DIR$" />
+          </mappings>
+        </serverdata>
+      </server>
       <server id="77af6318-843a-4573-8df9-33d2c185f827">
         <serverdata>
           <mappings>
@@ -314,24 +311,24 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="24" width="1922" height="1037" extended-state="7" />
+    <frame x="-1" y="24" width="1922" height="1037" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.22501336" sideWeight="0.32581738" order="1" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.18332443" sideWeight="0.7925592" order="1" side_tool="true" content_ui="tabs" x="1551" y="24" width="343" height="976" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23303047" sideWeight="0.67080045" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18332443" sideWeight="0.67080045" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -380,102 +377,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/main.php">
+    <entry file="file://$PROJECT_DIR$/protected/views/acts/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="0" selection-start="4400" selection-end="4400" vertical-scroll-proportion="0.58880776" />
+        <state line="16" column="5" selection-start="550" selection-end="550" vertical-scroll-proportion="-10.0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/controllers/ActsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="173" column="20" selection-start="5620" selection-end="5620" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/acts/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="17" selection-start="512" selection-end="517" vertical-scroll-proportion="-8.125" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/acts/_listView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="42" selection-start="768" selection-end="768" vertical-scroll-proportion="-10.625" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/acts/_itemView.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="53" selection-start="1060" selection-end="1060" vertical-scroll-proportion="0.39520958" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/zii/widgets/grid/CButtonColumn.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="213" column="42" selection-start="8589" selection-end="8589" vertical-scroll-proportion="0.0">
+        <state line="4" column="24" selection-start="74" selection-end="89" vertical-scroll-proportion="0.069848664">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/images/ico_prof_popoln_plus.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/style.css">
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/column2.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3194" column="0" selection-start="56389" selection-end="56389" vertical-scroll-proportion="0.895227">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/other.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="635" column="1" selection-start="12771" selection-end="12771" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="266" column="1" selection-start="2937" selection-end="2937" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_0.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="456" column="9" selection-start="13047" selection-end="13047" vertical-scroll-proportion="0.3329453">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/5c1bef54/detailview/styles.css">
+    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_full.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/5c1bef54/gridview/styles.css">
+    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="1" selection-start="1532" selection-end="1532" vertical-scroll-proportion="0.0">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/admin.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/Utils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="81" column="14" selection-start="3148" selection-end="3148" vertical-scroll-proportion="-26.041666">
+        <state line="14" column="27" selection-start="452" selection-end="452" vertical-scroll-proportion="0.17462166">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Act.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_small.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="265" column="0" selection-start="11544" selection-end="11544" vertical-scroll-proportion="0.0">
+        <state line="38" column="29" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.08982036">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php">
+    <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="199" column="48" selection-start="6250" selection-end="6250" vertical-scroll-proportion="0.45867288">
+        <state line="105" column="0" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.45923263">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/widgets/Basket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="27" selection-start="849" selection-end="849" vertical-scroll-proportion="0.5064028">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/OperationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="39" selection-start="1933" selection-end="1933" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="271" column="33" selection-start="9765" selection-end="9765" vertical-scroll-proportion="0.31548312">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/profile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="120" column="64" selection-start="3821" selection-end="3834" vertical-scroll-proportion="-13.916667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/extensions/qrcode/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="10" selection-start="282" selection-end="289" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="169" column="0" selection-start="5793" selection-end="5793" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/extensions/qrcode/QRCodeGenerator.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="5" selection-start="1600" selection-end="1600" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/user/_couponPopup.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="0" selection-start="2486" selection-end="2486" vertical-scroll-proportion="0.7664671">
           <folding />
         </state>
       </provider>

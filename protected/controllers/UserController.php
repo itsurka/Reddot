@@ -291,7 +291,7 @@ class UserController extends Controller {
         header("Content-Disposition: attachment; filename=" . $model->picture . '.jpg');
         readfile($file);
 
-        Yii::app() - end();
+        Yii::app()->end();
     }
 
     public function actionAjaxSendCoupon() {

@@ -50,7 +50,6 @@
         <div class="col_rg">
             <div class="qr_kod_im">
                 <div style="background: url('<?php $this->widget('ext.qrcode.QRCodeGenerator', array('data' => $model->secret_key)); ?>') no-repeat center center;"></div>
-
             </div>
             <div class="qr_kod_tx">
                 возможно использовать<br>

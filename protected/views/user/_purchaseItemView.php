@@ -23,7 +23,7 @@
                                     </a>
                                 </div>
                                 <div class="oplach tx1">
-                                    Оплачено ??? руб.
+                                    Оплачено <?php echo $data->coupon->total_cost ?> руб.
                                 </div>
                                 <div class="data_do tx1">
                                     Действует до <?php echo Yii::app()->dateFormatter->format('dd MMMM yyyy', $data->coupon->act->date_end_act); ?> г.

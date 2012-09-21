@@ -1,5 +1,8 @@
 <?php
-ini_set('error_reporting', E_ERROR); //E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+//ini_set('error_reporting', E_ERROR); //E_ALL & ~E_NOTICE & ~E_DEPRECATED);
+error_reporting(E_ERROR);
+ini_set('error_reporting', 1);
+
 // change the following paths if necessary
 $yii=dirname(__FILE__).'/framework/yii.php';
 $global_functions=dirname(__FILE__).'/protected/config/global.php';

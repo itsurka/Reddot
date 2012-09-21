@@ -24,7 +24,7 @@
 
                             </div>
                         </a>
-                        <a class="nob" href="#">
+                        <a class="nob" href="/operation/purchase">
                             <div class="im" style="">
 
                             </div>

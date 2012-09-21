@@ -31,5 +31,4 @@ class Basket extends CWidget {
             'positions' => $this->positions,
             'cost' => $this->cost));
     }
-
 }

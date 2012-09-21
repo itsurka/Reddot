@@ -45,4 +45,11 @@ class OperationController extends Controller {
         Yii::app()->qiwi->updateBill();
     }
 
+    public function actionPurchase() {
+        $operation = new Operation;
+        $operations = $operation->paymentPurchase();
+
+        $this->render('purchase', array('operations' => $operations));
+    }
+
 }
