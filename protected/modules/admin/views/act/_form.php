@@ -158,7 +158,8 @@ $form = $this->beginWidget('CActiveForm', array(
             return false;
         });
         
-    "); ?>
+    ");
+    ?>
     <div class="form-inline" style="margin: 0px 0px 0px 160px;">
         <div id="itemsList">
             <?php $c = 0; ?>
@@ -238,6 +239,16 @@ $form = $this->beginWidget('CActiveForm', array(
             <?php echo $form->labelEx($act, 'seo_description', array('class' => 'control-label')); ?>
             <div class="controls">
                 <?php echo $form->textArea($act, 'seo_description', array('class' => 'input-xxlarge')); ?>
+            </div>
+        </div>
+
+        <h4>Показать/скрыть акцию</h4>
+        <hr />
+            
+        <div class="control-group">
+            <?php echo $form->labelEx($act, 'is_active', array('class' => 'control-label')); ?>
+            <div class="controls">
+                <?php echo $form->checkBox($act, 'is_active'); ?>
             </div>
         </div>
 

@@ -224,7 +224,20 @@ class ActController extends Controller {
         $cloneAct->date_end_coupon_act = $act->date_end_coupon_act;
         $cloneAct->full_text_act = $act->full_text_act;
         $cloneAct->id_town_act = $act->id_town_act;
-        $a = $cloneAct->save();
-        var_dump($a, $cloneAct->getErrors());
+        $cloneAct->save();
+    }
+
+
+    /**
+     * Сменить заначение акции, активная или нет
+     *
+     * @param $id
+     * @return void
+     */
+    public function actionChangeActivity($id) {
+        $model = $this->loadModel($id);
+        $model->is_active = $model->is_active ? 0 : 1;
+        $model->save();
+        Yii::app()->end();
     }
 }

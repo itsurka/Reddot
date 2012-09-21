@@ -20,6 +20,7 @@
  * @property string $date_start_act
  * @property string $date_end_act
  * @property string $date_end_coupon_act
+ * @property string $is_active
  */
 class Act extends CActiveRecord implements IECartPosition {
 
@@ -62,8 +63,8 @@ class Act extends CActiveRecord implements IECartPosition {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name_act, short_text_act, coupon_count, photo_act, short_url, full_text_act, terms, id_org_act, id_town_act, id_themes_act, is_bonus, date_start_act, date_end_act, date_end_coupon_act', 'required'),
-            array('paid,id_org_act,delete_picture, id_town_act, id_themes_act, coupon_count, coupon_need, is_bonus', 'numerical', 'integerOnly' => true),
+            array('name_act, short_text_act, coupon_count, photo_act, short_url, full_text_act, terms, id_org_act, id_town_act, id_themes_act, is_bonus, date_start_act, date_end_act, date_end_coupon_act, is_active', 'required'),
+            array('paid,id_org_act,delete_picture, id_town_act, id_themes_act, coupon_count, coupon_need, is_bonus, is_active', 'numerical', 'integerOnly' => true),
             array('price_old, price_new', 'numerical'),
             array('short_url', 'unique'),
             array('short_url', 'match', 'pattern' => $this->shortUrlPattern, 'allowEmpty' => false, 'message' => 'ЧПУ содержит не допустимые символы. Разрешается использовать: a-z A-Z - _'),
@@ -120,6 +121,7 @@ class Act extends CActiveRecord implements IECartPosition {
             'short_url' => 'Ссылка (ЧПУ)',
             'coupon_purchased' => 'Куплено купонов',
             'price_new_description' => 'Price Description',
+            'is_active' => 'Показывать на сайте',
         );
     }
 

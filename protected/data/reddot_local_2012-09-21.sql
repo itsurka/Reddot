@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Сен 21 2012 г., 23:11
+-- Время создания: Сен 22 2012 г., 00:11
 -- Версия сервера: 5.1.63
 -- Версия PHP: 5.3.2-1ubuntu4.18
 
@@ -52,15 +52,17 @@ CREATE TABLE IF NOT EXISTS `act` (
   `date_start_act` datetime NOT NULL,
   `date_end_act` datetime NOT NULL,
   `date_end_coupon_act` datetime NOT NULL COMMENT 'Дата действия купонов',
+  `is_active` tinyint(1) NOT NULL DEFAULT '1' COMMENT 'Активна ли акция',
   PRIMARY KEY (`id_act`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `act`
 --
 
-INSERT INTO `act` (`id_act`, `paid`, `name_act`, `short_url`, `seo_title`, `seo_keywords`, `seo_description`, `url_name`, `photo_act`, `short_text_act`, `full_text_act`, `terms`, `id_org_act`, `id_town_act`, `id_themes_act`, `id_tag_act`, `price_old`, `price_new`, `price_new_description`, `coupon_count`, `coupon_purchased`, `coupon_need`, `is_bonus`, `date_start_act`, `date_end_act`, `date_end_coupon_act`) VALUES
-(1, 0, 'test1', 'test1', '', '', '', '', 'f00204d834de5b07f2cfd1c7970e38df', 'test1', '<blockquote><p>&nbsp;test1</p></blockquote>', '<p>&nbsp;test1</p>', 2, 1, 1, NULL, 0, NULL, '', 25, 2, 0, 0, '2012-09-21 00:00:00', '2012-09-30 00:00:00', '2012-09-30 00:00:00');
+INSERT INTO `act` (`id_act`, `paid`, `name_act`, `short_url`, `seo_title`, `seo_keywords`, `seo_description`, `url_name`, `photo_act`, `short_text_act`, `full_text_act`, `terms`, `id_org_act`, `id_town_act`, `id_themes_act`, `id_tag_act`, `price_old`, `price_new`, `price_new_description`, `coupon_count`, `coupon_purchased`, `coupon_need`, `is_bonus`, `date_start_act`, `date_end_act`, `date_end_coupon_act`, `is_active`) VALUES
+(1, 0, 'test1', 'test1', '', '', '', '', 'f00204d834de5b07f2cfd1c7970e38df', 'test1', '<blockquote><p>&nbsp;test1</p></blockquote>', '<p>&nbsp;test1</p>', 2, 1, 1, NULL, 0, NULL, '<p>&nbsp;</p>', 25, 2, 0, 0, '2012-09-21 00:00:00', '2012-09-30 00:00:00', '2012-09-30 00:00:00', 1),
+(2, 0, 'hideAct', 'hideAct', '', '', '', '', 'f00204d834de5b07f2cfd1c7970e38df', 'hideAct', '<p>&nbsp;hideAct</p>', '<p>&nbsp;hideAct</p>', 2, 1, 1, NULL, 0, NULL, '', 100, 0, 0, 0, '2012-09-21 00:00:00', '2012-09-30 00:00:00', '2012-09-30 00:00:00', 1);
 
 -- --------------------------------------------------------
 
@@ -115,14 +117,15 @@ CREATE TABLE IF NOT EXISTS `coupon` (
   `created` int(11) DEFAULT NULL,
   `modified` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
 
 --
 -- Дамп данных таблицы `coupon`
 --
 
 INSERT INTO `coupon` (`id`, `act_id`, `title`, `total_cost`, `first_cost`, `last_cost`, `discount`, `created`, `modified`) VALUES
-(1, 1, 'test1', '150', '100', '50', 50, NULL, NULL);
+(1, 1, 'test1', '150', '100', '50', 50, NULL, NULL),
+(2, 2, 'hideAct', '200', '250', '150', 100, NULL, NULL);
 
 -- --------------------------------------------------------
 

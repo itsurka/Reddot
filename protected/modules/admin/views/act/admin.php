@@ -52,6 +52,10 @@
                     'type' => 'raw',
                     'value' => 'CHtml::link("", "#", array("onclick"=>"cloneAct($data->id);", "class"=>"clone_btn", "title"=>"Клонировать"));',
                 ),
+                array(
+                    'type' => 'raw',
+                    'value' => 'CHtml::link("".($data->is_active ? "Скрыть" : "Показать")."", "#", array("onclick"=>"manageActActivity(".($data->id).");", "class"=>"", "title"=>"".($data->is_active ? "Скрыть" : "Показать").""));',
+                ),
             ),
         ));
         ?>
@@ -95,6 +99,15 @@
                 $('#grid').yiiGridView.update('grid');
             }
         });
+    }
 
+    function manageActActivity(actID) {
+        $.ajax({
+            url: '/admin/act/changeactivity/id/' + actID,
+            type: 'POST',
+            success: function() {
+                $('#grid').yiiGridView.update('grid');
+            }
+        });
     }
 </script>

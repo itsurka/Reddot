@@ -2,8 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/ActsController.php" afterPath="$PROJECT_DIR$/protected/controllers/ActsController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/data/reddot_local_2012-09-21.sql" afterPath="$PROJECT_DIR$/protected/data/reddot_local_2012-09-21.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Act.php" afterPath="$PROJECT_DIR$/protected/models/Act.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" afterPath="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" afterPath="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,13 +44,8 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
-        <option value="$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php" />
-        <option value="$PROJECT_DIR$/index.php" />
-        <option value="$PROJECT_DIR$/framework/yiilite.php" />
         <option value="$PROJECT_DIR$/framework/db/ar/CActiveRecord.php" />
         <option value="$PROJECT_DIR$/protected/views/user/_purchaseItemView.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
         <option value="$PROJECT_DIR$/protected/components/widgets/views/basket_small.php" />
         <option value="$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php" />
         <option value="$PROJECT_DIR$/protected/components/widgets/Basket.php" />
@@ -55,6 +55,11 @@
         <option value="$PROJECT_DIR$/protected/extensions/qrcode/QRCodeGenerator.php" />
         <option value="$PROJECT_DIR$/protected/views/user/_couponPopup.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/protected/models/Act.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/views/act/admin.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" />
       </list>
     </option>
   </component>
@@ -270,48 +275,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/views/layouts/column2.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_full.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/Utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="27" selection-start="452" selection-end="452" vertical-scroll-proportion="0.17462166">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_small.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="29" selection-start="2028" selection-end="2028" vertical-scroll-proportion="0.08982036">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="105" column="0" selection-start="2559" selection-end="2559" vertical-scroll-proportion="0.45923263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/components/widgets/Basket.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="27" selection-start="849" selection-end="849" vertical-scroll-proportion="0.5064028">
@@ -378,6 +341,48 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state line="3" column="0" selection-start="34" selection-end="34" vertical-scroll-proportion="0.052386496">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="6" selection-start="769" selection-end="769" vertical-scroll-proportion="-13.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/ActsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="161" column="30" selection-start="5174" selection-end="5174" vertical-scroll-proportion="0.38533178">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Act.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="60" column="7" selection-start="1791" selection-end="1791" vertical-scroll-proportion="0.3723404">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/admin.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="3345" selection-end="3345" vertical-scroll-proportion="0.83576643">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="212" column="25" selection-start="6975" selection-end="6975" vertical-scroll-proportion="0.39697322">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/_form.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="241" column="18" selection-start="10816" selection-end="10816" vertical-scroll-proportion="0.6311377">
           <folding />
         </state>
       </provider>
