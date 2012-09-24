@@ -9,26 +9,19 @@ $form = $this->beginWidget('CActiveForm', array(
 ));
 ?>
 <?php Yii::app()->clientScript->registerScript('custom redactor', "
-//    var buttons = ['bold', 'italic', '|', 'fontcolor', 'backcolor'];
-
-//    $('.redactor2').redactor({
-//        focus: true,
-//        buttons: buttons,
-//    });
-
     var editor = CKEDITOR.replace('Act_full_text_act', {
-        width: '936px',
+        width: '730px',
         height: '490px'
     });
     CKFinder.setupCKEditor( editor, '/js/ckfinder/');
 
     CKEDITOR.replace('Act_terms', {
-        width: '936px',
+        width: '730px',
         height: '240px'
     });
 
     CKEDITOR.replace('Act_price_new_description', {
-        width: '936px',
+        width: '730px',
     });
 
 "); ?>
@@ -77,14 +70,14 @@ $form = $this->beginWidget('CActiveForm', array(
         <div class="control-group">
             <?php echo $form->labelEx($act, 'full_text_act', array('class' => 'control-label')); ?>
             <div class="controls">
-                <?php echo $form->textArea($act, 'full_text_act', array('class' => 'input-xxlarge redactor')); ?>
+                <?php echo $form->textArea($act, 'full_text_act', array('class' => 'input-xxlarge ')); ?>
             </div>
         </div>
 
         <div class="control-group">
             <?php echo $form->labelEx($act, 'terms', array('class' => 'control-label')); ?>
             <div class="controls">
-                <?php echo $form->textArea($act, 'terms', array('class' => 'input-xxlarge redactor')); ?>
+                <?php echo $form->textArea($act, 'terms', array('class' => 'input-xxlarge ')); ?>
             </div>
         </div>
 
@@ -107,7 +100,7 @@ $form = $this->beginWidget('CActiveForm', array(
         <hr />
         <div class="control-group">
             <div class="controls">
-                <?php echo $form->textArea($act, 'price_new_description', array('class' => 'redactor2', 'placeholder' => 'Исходная цена, минус проценты, итоговая цена.')); ?>
+                <?php echo $form->textArea($act, 'price_new_description', array('class' => '', 'placeholder' => 'Исходная цена, минус проценты, итоговая цена.')); ?>
                 <p class="help-block">Текст рядом с кнопкой КУПИТЬ на странице акции</p>
             </div>
         </div>

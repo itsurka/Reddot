@@ -43,7 +43,7 @@
         -->
         <?php
         Yii::app()->clientScript->registerScript('search', "
-//            $('.redactor').redactor();
+            $('.redactor').redactor();
             $('.span3 form').live('change', function(){
                 $.fn.yiiGridView.update('grid', {
                     data: $(this).serialize()

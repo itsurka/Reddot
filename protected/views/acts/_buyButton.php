@@ -19,7 +19,7 @@ if ($model->isForSale()):
                         <div class="ram_yelow_dv_cn">
                             <div><b><?php echo $model->firstCoupon->getPrice(); ?> <?php echo $model->currencyStr; ?></b></div>
                         </div>
-                        <a href="javascript: void(0);" class="ram_yelow_dv_rg_butt putToBasket" data-actId='<?php echo $model->firstCoupon->id; ?>'>
+                        <a href="javascript: void(0);" class="ram_yelow_dv_rg_butt putToBasket show-number-<?php echo $_SESSION['show-number']; ?>" data-actId='<?php echo $model->firstCoupon->id; ?>'>
                             <div>Купить</div>
                         </a>
                     </div>
