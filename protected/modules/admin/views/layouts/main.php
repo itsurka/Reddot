@@ -8,7 +8,11 @@
         <link href="<?php echo Yii::app()->baseUrl; ?>/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
         <link href="<?php echo Yii::app()->baseUrl; ?>/bootstrap/css/redactor.css" rel="stylesheet" />
         <link href="<?php echo Yii::app()->baseUrl; ?>/bootstrap/css/other.css" rel="stylesheet">
+        <link href="<?php echo Yii::app()->baseUrl; ?>/js/ckeditor/_samples/sample.css" rel="stylesheet">
 
+        <script src="<?php echo Yii::app()->baseUrl; ?>/js/ckeditor/ckeditor.js"></script>
+        <script src="<?php echo Yii::app()->baseUrl; ?>/js/ckfinder/ckfinder.js"></script>
+        <script src="<?php echo Yii::app()->baseUrl; ?>/js/ckeditor/_samples/sample.js"></script>
         <script src="<?php echo Yii::app()->baseUrl; ?>/bootstrap/js/redactor.min.js"></script>
         <script src="<?php echo Yii::app()->baseUrl; ?>/bootstrap/js/bootstrap-tooltip.js"></script>
         <style type="text/css">
@@ -39,7 +43,7 @@
         -->
         <?php
         Yii::app()->clientScript->registerScript('search', "
-            $('.redactor').redactor();
+//            $('.redactor').redactor();
             $('.span3 form').live('change', function(){
                 $.fn.yiiGridView.update('grid', {
                     data: $(this).serialize()

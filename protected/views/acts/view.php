@@ -118,13 +118,15 @@
                                                                     <span class="kpview_rgtx_3"><?php echo $model->coupon_purchased; ?></span>&nbsp;&nbsp;<span class="kpview_rgtx_1">купили</span></div>
                                                             </td>
                                                         </tr>
-                                                        <tr><td height="1"><div class="hr_grey_white_2"></div></td></tr>
-                                                        <tr>
-                                                            <td class="kpview_rgtx_td" height="85">
-                                                                <div class="kpview_rgtx_mr1">
-                                                                    <span class="kpview_rgtx_3"><?php echo $model->getCouponRemaining(); ?></span>&nbsp;&nbsp;<span class="kpview_rgtx_1">купонов осталось</span></div>
-                                                            </td>
-                                                        </tr>
+                                                        <?php if($model->getHasLimitedCouponsForSale()): ?>
+                                                            <tr><td height="1"><div class="hr_grey_white_2"></div></td></tr>
+                                                                <tr>
+                                                                    <td class="kpview_rgtx_td" height="85">
+                                                                        <div class="kpview_rgtx_mr1">
+                                                                            <span class="kpview_rgtx_3"><?php echo $model->getCouponRemaining(); ?></span>&nbsp;&nbsp;<span class="kpview_rgtx_1">купонов осталось</span></div>
+                                                                    </td>
+                                                                </tr>
+                                                        <?php endif; ?>
                                                         <tr><td height="1"><div class="hr_grey_white_2"></div></td></tr>
                                                         <tr>
                                                             <td class="kpview_rgtx_td" height="75">

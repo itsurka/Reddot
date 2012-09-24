@@ -3192,3 +3192,8 @@ div.lg_check_label {
 #shop_basket .close_cart:hover span {
     text-decoration: none;
 }
+
+p.price_new_description{
+    color: #000000;
+    font-size: 21px;
+}

@@ -1,5 +1,4 @@
-
-﻿var tp_drop = 0;
+var tp_drop = 0;
 var curr_num_elem_sel = 0;
 
 
@@ -496,24 +495,20 @@ function reg_submit() {
 // показать окно покупки купона
 function show_kupon_bay() {
 
-    /*
-    $("body").append('<div id="fade" ></div>');
-    body_height = document.documentElement.scrollHeight;
-    $("body #fade").css("height", body_height).show();
-*/
     var pos_1 = $('.ram_yelow_dv_rg_butt').offset();
     var pos_2 = $('#content_all').offset();
 
     $('body').append($('#kupon_bay_pop'));
     $('#kupon_bay_pop').css({
-        'left': pos_2.left+8, 
+        'left': pos_2.left+8,
         'top': pos_1.top + 40
     });
     $('#kupon_bay_pop').stop().animate({
-        "height": "show", 
+        "height": "show",
         "opacity": "show"
     }, 200);
-    $("body").click(close_kupon_bay);
+    
+    $("body").stop().live('click', close_kupon_bay);
     return false;
 }
 
@@ -572,7 +567,20 @@ function close_basket() {
 (function($){
     $(function(){
         $('#orderBasket').live('click', show_basket);
-        $('#showKuponBay').live('click', show_kupon_bay);
+//        $('#showKuponBay').live('click', show_kupon_bay);
+
+        $('.show-number-1').live('click',show_kupon_bay);
+
+        $('.show-number-2').live('click', function(event) {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 1300, function() {
+//                $('.show-number-1').click();
+                show_kupon_bay();
+            });
+        });
+
+
         $('.putToBasket').live('click', function(){
             var id = $(this).data('actid');
             $.ajax({

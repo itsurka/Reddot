@@ -36,11 +36,13 @@
                         <div><b>До конца акции</b></div>
                         <div><b><?php echo $data->endActionStr; ?></b></div>
                     </td>
-                    <td class="gd_elem_info_brd_dtt" width="10"></td>
-                    <td valign="top">
-                        <div><b>Осталось</b></div>
-                        <a class="d_elem_info_nm_kupon" href="#"><?php echo $data->coupon_count - $data->coupon_purchased; ?> купонов</a>
-                    </td>
+                    <td class="" width="10"></td>
+                    <?php if($data->getHasLimitedCouponsForSale()) { ?>
+                        <td valign="top">
+                            <div><b>Осталось</b></div>
+                            <a class="d_elem_info_nm_kupon" href="#"><?php echo $data->coupon_count - $data->coupon_purchased; ?> купонов</a>
+                        </td>
+                    <?php } ?>
                 <?php else: ?>
                     <td width="125" valign="top">
                         <div><b>Эта акция уже закончилась</b></div>

@@ -308,7 +308,7 @@ class Operation extends CActiveRecord {
             return 'Не достаточно средств на счете';
         }
 
-        if ($item->act->getCouponRemaining() < 1) {
+        if (!$item->act->isForSale()) {
             return 'Закончились купоны';
         }
 

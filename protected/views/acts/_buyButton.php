@@ -1,4 +1,12 @@
-<?php if ($model->isForSale()): ?>
+<?php
+if (!isset($_SESSION['show-number']) || $_SESSION['show-number'] == 2)
+    $_SESSION['show-number'] = 1;
+else
+    $_SESSION['show-number']++;
+
+if ($model->isForSale()):
+    $model->price_new_description = str_replace('<p', '<p class="price_new_description"', $model->price_new_description);
+    ?>
     <table class="cont_tab_nums" cellpadding="0" cellspacing="0" border="0">
         <tr>
             <td style="padding-right: 10px;">
@@ -11,7 +19,7 @@
                         <div class="ram_yelow_dv_cn">
                             <div><b><?php echo $model->firstCoupon->getPrice(); ?> <?php echo $model->currencyStr; ?></b></div>
                         </div>
-                        <a href="#" class="ram_yelow_dv_rg_butt putToBasket" data-actId='<?php echo $model->firstCoupon->id; ?>'>
+                        <a href="javascript: void(0);" class="ram_yelow_dv_rg_butt putToBasket" data-actId='<?php echo $model->firstCoupon->id; ?>'>
                             <div>Купить</div>
                         </a>
                     </div>
@@ -21,7 +29,7 @@
                         <div class="ram_yelow_dv_cn">
                             <div><b><?php echo $model->getTotalCost(); ?> <?php echo $model->currencyStr; ?></b></div>
                         </div>
-                        <a href="#" id='showKuponBay' class="ram_yelow_dv_rg_butt">
+                        <a href="javascript: void(0);" id='showKuponBay' class="ram_yelow_dv_rg_butt show-number-<?php echo $_SESSION['show-number']; ?>">
                             <div>Купить</div>
                         </a>
 
@@ -68,7 +76,7 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="col_2">
-                                                                    <a class="button_bay" href="#">
+                                                                    <a class="button_bay" href="javascript: void(0);">
                                                                         <div class="putToBasket" data-actId='<?php echo $coupon->id; ?>' style="z-index: 1000">Оформить</div>
                                                                     </a>
                                                                 </div>

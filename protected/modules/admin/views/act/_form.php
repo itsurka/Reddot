@@ -9,12 +9,28 @@ $form = $this->beginWidget('CActiveForm', array(
 ));
 ?>
 <?php Yii::app()->clientScript->registerScript('custom redactor', "
-    var buttons = ['bold', 'italic', '|', 'fontcolor', 'backcolor'];
+//    var buttons = ['bold', 'italic', '|', 'fontcolor', 'backcolor'];
 
-    $('.redactor2').redactor({
-        focus: true, 
-        buttons: buttons,
+//    $('.redactor2').redactor({
+//        focus: true,
+//        buttons: buttons,
+//    });
+
+    var editor = CKEDITOR.replace('Act_full_text_act', {
+        width: '936px',
+        height: '490px'
     });
+    CKFinder.setupCKEditor( editor, '/js/ckfinder/');
+
+    CKEDITOR.replace('Act_terms', {
+        width: '936px',
+        height: '240px'
+    });
+
+    CKEDITOR.replace('Act_price_new_description', {
+        width: '936px',
+    });
+
 "); ?>
 <fieldset>
     <?php if ($act->hasErrors()): ?>

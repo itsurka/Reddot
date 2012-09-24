@@ -14,7 +14,6 @@
  * @property integer $id_themes_act
  * @property double $price_old
  * @property double $price_new
- * @property integer $coupon_count
  * @property integer $coupon_need
  * @property integer $is_bonus
  * @property string $date_start_act
@@ -30,6 +29,7 @@ class Act extends CActiveRecord implements IECartPosition {
     public $imageAvailableSizes = array("original", "resized", '340x185', '550x315', '185x100', '120x214');
     public $filter = null;
     public $delete_picture;
+    public $coupon_count = 0;
     public $shortUrlPattern = '|^[a-zA-Z0-9-_]+|';
 
     /**
@@ -393,7 +393,7 @@ class Act extends CActiveRecord implements IECartPosition {
     }
 
     public function isForSale() {
-        if (($this->coupon_count > $this->coupon_purchased) && (strtotime($this->date_end_coupon_act) > time())) {
+        if (($this->coupon_count > $this->coupon_purchased || !$this->getHasLimitedCouponsForSale()) && strtotime($this->date_end_coupon_act) > time()) {
             return true;
         }
 
@@ -416,6 +416,15 @@ class Act extends CActiveRecord implements IECartPosition {
     public function getShortText() {
         // Пока не предусмотрено
         return $this->short_text_act;
+    }
+
+    /**
+     * Проверяем если акция ограничена
+     * количеством купонов для продажи
+     * @return bool
+     */
+    public function getHasLimitedCouponsForSale() {
+        return $this->coupon_count > 0 ? true : false;
     }
 
 }
