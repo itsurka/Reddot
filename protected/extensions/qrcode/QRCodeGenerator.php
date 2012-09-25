@@ -39,6 +39,10 @@ class QRCodeGenerator extends CWidget {
         }
 
         $this->filename = md5($this->data) . '.png';
+
+        if (!empty($this->returnPath))
+            $this->returnPath = true;
+
         //remember to sanitize user input in real-life solution !!!
         if (!in_array($this->errorCorrectionLevel, array('L', 'M', 'Q', 'H')))
             throw new CException(Yii::t(get_class($this), 'Error Correction Level only accepts L,M,Q,H'));

@@ -143,18 +143,22 @@ class UserController extends Controller {
     public function actionProfile() {
         $model = new Purchase('search');
         if (isset($_GET))
-            $model->setAttributes($_GET);
+        $model->setAttributes($_GET);
 
         if (!$model->status)
-            $model->status = Purchase::STATUS_NOT_ACTIVATED;
+        $model->status = Purchase::STATUS_NOT_ACTIVATED;
 
         $model->user_id = Yii::app()->user->id;
         $dataProvider = $model->userSearch();
 
         if (Yii::app()->request->isAjaxRequest)
+        {
             $this->renderPartial('_purchaseItemsList', array('dataProvider' => $dataProvider));
+        }
         else
+        {
             $this->render('profile', array('dataProvider' => $dataProvider));
+        }
     }
 
     public function actionAjaxGetCoupon() {
@@ -284,7 +288,8 @@ class UserController extends Controller {
         if ($model->user_id != Yii::app()->user->id)
             throw new CHttpException(404, 'Такой страницы не существует.');
 
-        $file = $model->getPictureFile();
+        $file = $this->getCouponAsPicture($model);
+
         header("Content-type: image/jpeg");
         header("Accept-Ranges: bytes");
         header("Content-Length: " . filesize($file));
@@ -313,4 +318,110 @@ class UserController extends Controller {
         throw new CHttpException(404, 'Такой страницы не существует.');
     }
 
+
+    /**
+     * Генерим картинку купона акции
+     * @param $purchase
+     * @return string
+     */
+    public function getCouponAsPicture($purchase) {
+        $s = DIRECTORY_SEPARATOR;
+        $rootPath = dirname(Yii::getPathOfAlias('application')) . $s;
+        $imagePath = $rootPath . 'images' . $s . 'coupon.jpg';
+        $uploadsPath = $rootPath . 'upload' . $s . 'coupons';
+        $fontPath = $rootPath . 'fonts/13761.ttf';
+
+        if (true)
+        {
+//        if(!$purchase->picture)
+//        {
+            $act = Act::model()->findByPk($purchase->act_id);
+
+//            echo '$act->attributes[]<pre>';
+//            print_r($act->attributes);
+//            echo '</pre>';
+//
+//            echo 'town[]<pre>';
+//            print_r($act->town->attributes);
+//            echo '</pre>';
+//
+//            echo 'user[]<pre>';
+//            print_r($act->user->attributes);
+//            echo '</pre>';
+//
+//            echo '$purchase->attributes[]<pre>';
+//            print_r($purchase->attributes);
+//            echo '</pre>';
+
+//            exit('e1');
+
+            $purchase->picture = md5($purchase->secret_key) . '.jpg';
+
+            if(!is_dir($uploadsPath))
+                mkdir($uploadsPath);
+
+            $sourceImage = $rootPath . 'upload/coupons/sourceCoupon.jpg';
+            $qrcode = $this->widget('ext.qrcode.QRCodeGenerator', array('data' => $purchase->secret_key), true);
+            $arial = $rootPath . 'fonts/arial.ttf';
+            $arialBold =  $rootPath . 'fonts/arial_bold.ttf';
+            $actTitle = $act->name_act;
+            $address = json_decode($act->user->address);
+            $actAddress = $address[0]->address;
+            $actWorkTime = $act->user->working_time;
+            $secretKey = $purchase->secret_key;
+            $activeUntil = date('d.m.Y', strtotime($act->date_end_coupon_act));
+            $websiteUrl = $_SERVER['HTTP_HOST'];
+            $regionalAdminPhoneNumber = $act->user->phone; // '+7 903 999-66-99';
+            $adminEmail = Yii::app()->params['adminEmail'];
+
+            $actTitleArray = Utils::strToArray($actTitle, 40);
+
+            $img = WideImage::load($sourceImage);
+            $watermark = WideImage::load(Yii::getPathOfAlias('webroot') . '/' . $qrcode);
+            $img = $img->merge($watermark, 30, 100);
+
+            // Пишем название акции
+            $canvas = $img->getCanvas();
+            $canvas->useFont($arialBold, 19, $img->allocateColor(0, 0, 0));
+            foreach($actTitleArray as $i=>$eachText)
+            {
+                $canvas->writeText(174, 73 + (($i+1)*28), $eachText);
+            }
+
+            // Пишем адрес, телефон
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(330, 205, $actAddress);
+
+            // Пишем время работы
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(305, 229, $actWorkTime);
+
+            // Пишем ключ купона
+            $canvas->useFont($arial, 34, $img->allocateColor(45, 152, 208));
+            $canvas->writeText(180, 324, $secretKey);
+
+            // Пишем дата активности
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(378, 399, $activeUntil);
+
+            // Пишем адрес сайта
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(30, 470, $websiteUrl);
+
+            // Пишем телефон рег. админа
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(220, 470, $regionalAdminPhoneNumber);
+
+            // Пишем почту админа нашего сайта
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(560, 470, $adminEmail);
+
+            $imagePath = $uploadsPath . $s . $purchase->picture;
+            $img->saveToFile($imagePath);
+
+            $purchase->save();
+        }
+
+        return $uploadsPath . $s . $purchase->picture;
+    }
 }

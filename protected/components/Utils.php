@@ -52,4 +52,43 @@ class Utils
             }
         }
     }
+
+
+    /**
+    * Разбиваем строку в массив, каждое будет
+    * иметь куски строки не превышающие $maxLenght
+    * @param $string
+    * @param int $maxLenght
+    * @return array|string
+    */
+    public static function strToArray($string, $maxLenght=100)
+    {
+        $endString = '';
+        $stringArray = array();
+        $string = trim($string);
+        $lenght = mb_strlen($string, 'UTF-8');
+
+        if ($lenght > $maxLenght)
+        {
+            $words = explode(' ', $string);
+            $i = 0;
+            foreach($words as $eachWord)
+            {
+                if (empty($stringArray[$i]))
+                        $stringArray[$i] = '';
+
+                if(!(mb_strlen($stringArray[$i] . ' ' . $eachWord.$endString, 'UTF-8') < $maxLenght))
+                    $i++;
+
+                if (empty($stringArray[$i]))
+                        $stringArray[$i] = '';
+
+                $stringArray[$i] .= ' ' . $eachWord;
+            }
+        }
+        else
+            $stringArray[0] = $string;
+
+        return $stringArray;
+    }
 }

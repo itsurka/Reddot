@@ -224,4 +224,6 @@ class Purchase extends CActiveRecord {
         return $uploadsPath . $s . $this->picture;
     }
 
+
+
 }
