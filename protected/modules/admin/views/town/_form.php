@@ -29,6 +29,12 @@ $form = $this->beginWidget('CActiveForm', array(
             <p class="help-block">Будет отображаться в подвале сайта</p>
         </div>
     </div>
+    <div class="control-group">
+        <?php echo $form->labelEx($model, 'email', array('class' => 'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->textField($model, 'email', array('class' => 'input-xlarge')); ?>
+        </div>
+    </div>
 
     <div class="form-actions">
         <?php echo CHtml::submitButton('Сохранить', array('class' => 'btn btn-primary')); ?>

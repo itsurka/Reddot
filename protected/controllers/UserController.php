@@ -331,29 +331,10 @@ class UserController extends Controller {
         $uploadsPath = $rootPath . 'upload' . $s . 'coupons';
         $fontPath = $rootPath . 'fonts/13761.ttf';
 
-        if (true)
+//        if (true)
+        if(!$purchase->picture)
         {
-//        if(!$purchase->picture)
-//        {
             $act = Act::model()->findByPk($purchase->act_id);
-
-//            echo '$act->attributes[]<pre>';
-//            print_r($act->attributes);
-//            echo '</pre>';
-//
-//            echo 'town[]<pre>';
-//            print_r($act->town->attributes);
-//            echo '</pre>';
-//
-//            echo 'user[]<pre>';
-//            print_r($act->user->attributes);
-//            echo '</pre>';
-//
-//            echo '$purchase->attributes[]<pre>';
-//            print_r($purchase->attributes);
-//            echo '</pre>';
-
-//            exit('e1');
 
             $purchase->picture = md5($purchase->secret_key) . '.jpg';
 
@@ -362,17 +343,20 @@ class UserController extends Controller {
 
             $sourceImage = $rootPath . 'upload/coupons/sourceCoupon.jpg';
             $qrcode = $this->widget('ext.qrcode.QRCodeGenerator', array('data' => $purchase->secret_key), true);
-            $arial = $rootPath . 'fonts/arial.ttf';
             $arialBold =  $rootPath . 'fonts/arial_bold.ttf';
+            $arial = $rootPath . 'fonts/arial.ttf';
+            $arial = $arialBold;
             $actTitle = $act->name_act;
-            $address = json_decode($act->user->address);
-            $actAddress = $address[0]->address;
-            $actWorkTime = $act->user->working_time;
+            $addresses = json_decode($act->user->address);
+            $actWorkTime = 'Часы работы  ' . $act->user->working_time;
             $secretKey = $purchase->secret_key;
             $activeUntil = date('d.m.Y', strtotime($act->date_end_coupon_act));
             $websiteUrl = $_SERVER['HTTP_HOST'];
-            $regionalAdminPhoneNumber = $act->user->phone; // '+7 903 999-66-99';
-            $adminEmail = Yii::app()->params['adminEmail'];
+            $actTown = 'г. ' . $act->town->name_towns;
+            $actTownEmail = $act->town->email;
+            $actTownPhone = '';
+            preg_match_all('/([0-9]{1}[0-9\-\)\(\ ]{1,})/', $act->town->description, $matches);
+            if(!empty($matches[0])) $actTownPhone = $matches[0][0];
 
             $actTitleArray = Utils::strToArray($actTitle, 40);
 
@@ -383,38 +367,52 @@ class UserController extends Controller {
             // Пишем название акции
             $canvas = $img->getCanvas();
             $canvas->useFont($arialBold, 19, $img->allocateColor(0, 0, 0));
+            /*$actTitleArray = array(
+                'asdsadds ds sds sadadsad asf',
+                'asdsadds ds sds sadadsad asf',
+                'asdsadds ds sds sadadsad asf',
+            );*/ // FOR TEST
             foreach($actTitleArray as $i=>$eachText)
-            {
-                $canvas->writeText(174, 73 + (($i+1)*28), $eachText);
-            }
+                $canvas->writeText(180, 67 + (($i+1)*28), $eachText);
+
+            // Пишем город покупателя ввреху справа
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(670, 30, $actTown);
 
             // Пишем адрес, телефон
-            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(330, 205, $actAddress);
+            foreach($addresses as $i=>$eachAddress)
+            {
+                $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+                $canvas->writeText(330, 207 + ($i*18), $eachAddress->address);
+            }
 
             // Пишем время работы
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(305, 229, $actWorkTime);
+            $canvas->writeText(183, 231 + ((count($addresses)-1)*18), $actWorkTime);
 
             // Пишем ключ купона
             $canvas->useFont($arial, 34, $img->allocateColor(45, 152, 208));
-            $canvas->writeText(180, 324, $secretKey);
+            $canvas->writeText(180, 343, $secretKey);
+
+            // Пишем краткое описание
+            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+            $canvas->writeText(460, 340, $act->short_text_act);
 
             // Пишем дата активности
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(378, 399, $activeUntil);
+            $canvas->writeText(381, 418, $activeUntil);
 
             // Пишем адрес сайта
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(30, 470, $websiteUrl);
+            $canvas->writeText('left + 40', 'bottom - 23', $websiteUrl);
 
-            // Пишем телефон рег. админа
+            // Пишем телефон города покупателя
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(220, 470, $regionalAdminPhoneNumber);
+            $canvas->writeText('center', 'bottom - 23', $actTownPhone);
 
-            // Пишем почту админа нашего сайта
+            // Пишем почту города покупателя
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(560, 470, $adminEmail);
+            $canvas->writeText('right - 40', 'bottom - 23', $actTownEmail);
 
             $imagePath = $uploadsPath . $s . $purchase->picture;
             $img->saveToFile($imagePath);

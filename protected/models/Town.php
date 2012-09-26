@@ -33,8 +33,9 @@ class Town extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('name_towns', 'required'),
+            array('name_towns, email', 'required'),
             array('description', 'safe'),
+            array('email', 'email','checkMX'=>true),
             array('id_towns, description, name_towns', 'safe', 'on' => 'search'),
         );
     }
@@ -59,6 +60,7 @@ class Town extends CActiveRecord {
             'id_towns' => 'ID',
             'name_towns' => 'Название города',
             'description'=>'Контактная информация',
+            'email'=>'E-mail',
         );
     }
 
