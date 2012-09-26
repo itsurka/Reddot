@@ -2,20 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/data/blog-test.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/data/blog.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/data/schema.mysql.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/data/schema.sqlite.sql" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/protected/data/testdrive.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/upload/coupons/sourceCoupon.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Reddot.iml" afterPath="$PROJECT_DIR$/.idea/Reddot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/coupons/c95ba9718f19cfa00e5df0f9c5394bcc.jpg" afterPath="$PROJECT_DIR$/upload/coupons/c95ba9718f19cfa00e5df0f9c5394bcc.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/upload/coupons/sourceCoupon.jpg" afterPath="$PROJECT_DIR$/upload/coupons/sourceCoupon.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/php.xml" afterPath="$PROJECT_DIR$/.idea/php.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/controllers/UserController.php" afterPath="$PROJECT_DIR$/protected/controllers/UserController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Town.php" afterPath="$PROJECT_DIR$/protected/models/Town.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/views/town/_form.php" afterPath="$PROJECT_DIR$/protected/modules/admin/views/town/_form.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/i18n/data/ru.php" afterPath="$PROJECT_DIR$/framework/i18n/data/ru.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/framework/i18n/data/ru_md.php" afterPath="$PROJECT_DIR$/framework/i18n/data/ru_md.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/ActListWidget.php" afterPath="$PROJECT_DIR$/protected/components/ActListWidget.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Act.php" afterPath="$PROJECT_DIR$/protected/models/Act.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/views/layouts/column2.php" afterPath="$PROJECT_DIR$/protected/views/layouts/column2.php" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,55 +30,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserController.php" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="330" column="48" selection-start="10976" selection-end="10976" vertical-scroll-proportion="0.17927822">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Act.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Act.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/models/Act.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="6" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
+            <state line="351" column="0" selection-start="14141" selection-end="14141" vertical-scroll-proportion="0.21749409">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WideImage_Image.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/extensions/EWideImage/WideImage_Image.php">
+      <file leaf-file-name="ru.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/i18n/data/ru.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="247" column="17" selection-start="6369" selection-end="6369" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WideImage_Canvas.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/extensions/EWideImage/WideImage_Canvas.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="122" column="36" selection-start="3678" selection-end="3683" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Purchase.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/Purchase.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="74" column="17" selection-start="2421" selection-end="2425" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="30" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
+            <state line="55" column="14" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -106,14 +62,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/framework/web/CClientScript.php" />
-        <option value="$PROJECT_DIR$/framework/gii/CCodeModel.php" />
-        <option value="$PROJECT_DIR$/framework/base/CErrorHandler.php" />
-        <option value="$PROJECT_DIR$/framework/yiilite.php" />
-        <option value="$PROJECT_DIR$/framework/web/CController.php" />
-        <option value="$PROJECT_DIR$/protected/views/user/profile.php" />
         <option value="$PROJECT_DIR$/protected/views/user/_purchaseItemsList.php" />
-        <option value="$PROJECT_DIR$/protected/models/Act.php" />
         <option value="$PROJECT_DIR$/protected/views/user/_purchaseItemView.php" />
         <option value="$PROJECT_DIR$/protected/views/user/_couponPopup.php" />
         <option value="$PROJECT_DIR$/protected/models/Purchase.php" />
@@ -122,6 +71,13 @@
         <option value="$PROJECT_DIR$/protected/models/Town.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/views/town/_form.php" />
         <option value="$PROJECT_DIR$/protected/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/framework/i18n/data/ru.php" />
+        <option value="$PROJECT_DIR$/framework/i18n/data/ru_md.php" />
+        <option value="$PROJECT_DIR$/protected/models/Act.php" />
+        <option value="$PROJECT_DIR$/protected/views/layouts/column2.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/ActsController.php" />
+        <option value="$PROJECT_DIR$/protected/views/acts/view.php" />
+        <option value="$PROJECT_DIR$/protected/components/ActListWidget.php" />
       </list>
     </option>
   </component>
@@ -182,6 +138,60 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reddot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="protected" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="acts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -332,7 +342,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="24" width="1922" height="1037" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -342,7 +352,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.18332443" sideWeight="0.7925592" order="1" side_tool="true" content_ui="tabs" x="1551" y="24" width="343" height="976" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19935863" sideWeight="0.67080045" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19935863" sideWeight="0.67080045" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32919955" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -397,106 +407,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/protected/extensions/qrcode/QRCodeGenerator.php">
+    <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="0" selection-start="690" selection-end="690" vertical-scroll-proportion="0.05704307" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/web/widgets/CWidget.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="45" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.38489208" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/upload/coupons-qr/c95ba9718f19cfa00e5df0f9c5394bcc.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/extensions/EWideImage/WideImage.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="197" column="31" selection-start="8168" selection-end="8168" vertical-scroll-proportion="0.5948778" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/framework/YiiBase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="27" selection-start="3499" selection-end="3499" vertical-scroll-proportion="0.3329453">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="20" selection-start="26" selection-end="26" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/data/dbgen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/TownController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="29" selection-start="2175" selection-end="2181" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/town/_form.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="0" selection-start="281" selection-end="281" vertical-scroll-proportion="-6.875">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Town.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="49" selection-start="2287" selection-end="2287" vertical-scroll-proportion="0.6332945">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="30" selection-start="630" selection-end="630" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Purchase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="17" selection-start="2421" selection-end="2425" vertical-scroll-proportion="0.0">
+        <state line="342" column="0" selection-start="11313" selection-end="11313" vertical-scroll-proportion="0.38882422">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/extensions/EWideImage/WideImage_Canvas.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="122" column="36" selection-start="3678" selection-end="3683" vertical-scroll-proportion="0.0">
+        <state line="122" column="36" selection-start="3678" selection-end="3683" vertical-scroll-proportion="0.18509895">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/extensions/EWideImage/WideImage_Image.php">
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/be.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="17" selection-start="6369" selection-end="6369" vertical-scroll-proportion="0.0">
+        <state line="233" column="30" selection-start="4651" selection-end="4651" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/ru_md.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="14" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/layouts/column2.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="21" selection-start="2040" selection-end="2040" vertical-scroll-proportion="0.21532847">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/ActsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="183" column="161" selection-start="6086" selection-end="6143" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/ActListWidget.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="1" selection-start="763" selection-end="763" vertical-scroll-proportion="0.43655413">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/views/acts/view.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="247" column="54" selection-start="13999" selection-end="13999" vertical-scroll-proportion="-17.375">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/uk_ua.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="32" selection-start="3676" selection-end="3676" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/uk.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="197" column="32" selection-start="3673" selection-end="3673" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/tt_ru.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="14" selection-start="4037" selection-end="4037" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/tt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="196" column="14" selection-start="4034" selection-end="4034" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/ru_ua.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="14" selection-start="1265" selection-end="1265" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/ru_ru.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="72" column="21" selection-start="1578" selection-end="1578" vertical-scroll-proportion="0.5168801">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/i18n/data/ru.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="55" column="14" selection-start="1262" selection-end="1262" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/models/Act.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="6" selection-start="661" selection-end="661" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="330" column="48" selection-start="10976" selection-end="10976" vertical-scroll-proportion="0.17927822">
+        <state line="351" column="0" selection-start="14141" selection-end="14141" vertical-scroll-proportion="0.21749409">
           <folding />
         </state>
       </provider>

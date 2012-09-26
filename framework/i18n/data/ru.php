@@ -53,7 +53,7 @@ return array (
     'XOF' => 'CFA',
     'XPF' => 'CFPF',
     'RUB' => 'руб.',
-    'RUR' => 'р.',
+    'RUR' => 'руб.',
     'UAH' => '₴',
   ),
   'monthNames' => 

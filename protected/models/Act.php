@@ -355,7 +355,7 @@ class Act extends CActiveRecord implements IECartPosition {
     }
 
     public function getCurrencyStr() {
-        return $this->is_bonus ? ' бон.' : ' р.';
+        return $this->is_bonus ? ' бон.' : ' руб.';
     }
 
     public function getEndDateReadable() {

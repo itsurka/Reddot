@@ -24,7 +24,7 @@
                                     <table style="width: 157px; height: 30px;" align="right">
                                         <tr>
                                             <td width="70" align="center" valign="middle">
-                                                <b><?php echo Yii::app()->user->getBalance(); ?> р.</b>
+                                                <b><?php echo Yii::app()->user->getBalance(); ?> руб.</b>
                                             </td>
                                             <td>
                                                 <a class="money_have_butt" href="#" onclick="<?php if(!Yii::app()->user->isGuest) echo 'show_replenishment();'; else echo 'show_login(2); return false;'; ?>">
