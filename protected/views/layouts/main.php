@@ -57,7 +57,7 @@
                         mobile = prompt(promptDesc);
                         if(mobile) {
                             paymentParams.mobile = mobile;
-                            paymentParams.type = typePaymentPurchase;
+                            paymentParams.type = typeDeposit; //пополнение счета
                             paymentParams.summ = summValue;
                         }
                     }

@@ -37,7 +37,23 @@ class OperationController extends Controller {
              * Пополнение счета
              */
         } else if (isset($_GET['type']) && $_GET['type'] == Operation::TYPE_DEPOSIT) {
-            
+            if (isset($_GET['mobile'])) {
+                $purchases = array();
+                $operation = new Operation();
+                $operation->summ = $_GET['summ'];
+                $operation->user_id = Yii::app()->user->id;
+                $operation->title = 'Пополнение баланса';
+                $operation->type = Operation::TYPE_DEPOSIT;
+                $operation->description = 'Пополнение баланса на сайте';
+                $operation->status = Operation::STATUS_WAITING; // ожидание проплаты
+                if ($operation->save()) {
+                    $from = Yii::app()->qiwi->login;
+                    $qiwiLink = "http://w.qiwi.ru/setInetBill_utf.do?from={$from}&to={$_GET['mobile']}&summ={$operation->summ}&com={$operation->description}";
+                    $this->redirect($qiwiLink);
+                }
+            } else {
+                throw new CHttpException('Необходимо указать номер телефона');
+            }
         }
     }
 
