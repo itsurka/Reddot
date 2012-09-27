@@ -62,10 +62,16 @@ class OperationController extends Controller {
     }
 
     public function actionPurchase() {
-        $operation = new Operation;
-        $operations = $operation->paymentPurchase();
+        $CHttpRequest = new CHttpRequest();
+        $purchaseByBonus = false;
+        if ($CHttpRequest->getParam('bonus') !== null)
+            $purchaseByBonus = true;
 
-        $this->render('purchase', array('operations' => $operations));
+        $operation = new Operation;
+        $operations = $operation->paymentPurchase($purchaseByBonus);
+
+//        $this->render('purchase', array('operations' => $operations));
+        $this->redirect('/user/profile');
     }
 
 }

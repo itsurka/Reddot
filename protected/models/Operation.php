@@ -177,73 +177,13 @@ class Operation extends CActiveRecord {
     }
 
     /**
-     * Оплачиваем покупки из корзины. 
-     * 
-     * Оплата производится непосредственно со счета пользователя
-     * @param array $purchases товары, которые пользователь хоче приобрести
-     * @return array возвращаем массив проведенных операций для отображения пользователю
-     */
-    /*public function paymentPurchase($purchases, $user) {
-        $operations = array();
-
-        // Проходимся по всем позициям
-        foreach ($purchases as $item) {
-            $quantity = $item['quantity'];
-            $item = Coupon::model()->findByPk($item['id']);
-            // Проходимся по всем элементам позиции (в позиции может быть больше одного купона)
-            for ($i = 0; $i < $quantity; $i++) {
-                // Для добавления в историю операций
-                $operationAttributes = array(
-                    'title' => 'Оплата товара',
-                    'description' => $item->getTitle(),
-                    'user_id' => $user->id,
-                    'summ' => $item->getPrice(),
-                    'type' => self::TYPE_PAYMENT_PURCHASE,
-                    'object_type' => 'Acts',
-                    'object_id' => $item->id,
-                );
-
-                // Создаем новую покупку
-                $purchase = new Purchase();
-                $purchase->user_id = $user->id;
-                $purchase->act_id = $item->id;
-                $purchase->secret_key = $purchase->getUniqueKey();
-                $purchase->status = Purchase::STATUS_NOT_ACTIVATED;
-                $purchase->org_id = $item->act->id_org_act;
-                $hasErrors = $this->purchaseHasErrors($user, $item);
-                if ($hasErrors == false) {
-                    // Если не возникло ошибок, то списываем деньги со счета пользователя
-                    if ($purchase->hasErrors() == false && $purchase->save()) {
-                        $user->balance -= $item->getPrice();
-                        $user->save();
-
-                        // Покупка прошла успешно. Устанавливаем соответствующий статус для операции
-                        $operationAttributes['status'] = self::STATUS_SUCCESS;
-                        // Накручиваем ко-во купленных купонов
-                        $item->act->coupon_purchased++;
-                        $item->act->save();
-                    }
-                } else {
-                    $operationAttributes['status'] = self::STATUS_FAIL;
-                    $operationAttributes['extra'] = $hasErrors;
-                }
-
-                // Добавляем запись операции в таблицу
-                $operations[] = Operation::model()->addLog($operationAttributes);
-            }
-        }
-
-        // Возвращаем произведенные операции
-        return $operations;
-    }*/
-
-    /**
      * Оплачиваем покупки из корзины.
      *
      * Оплата производится непосредственно со счета пользователя
+     * @param $purchaseByBonus boolean Оплатить бонусами
      * @return array возвращаем массив проведенных операций для отображения пользователю
      */
-    public function paymentPurchase() {
+    public function paymentPurchase($purchaseByBonus=false) {
         $extra = ''; // Сообщение в случае ошибки
         $purchases = Yii::app()->shoppingCart->getPositions();
         $operations = array();
@@ -251,6 +191,12 @@ class Operation extends CActiveRecord {
 
         // Проходимся по всем позициям
         foreach ($purchases as $item) {
+
+            // Если выбрана оплата бонусами а акция не
+            // бонусная, тогда пропускаем это позицию
+            if ($purchaseByBonus && !$item->act->is_bonus)
+                continue;
+
             $quantity = $item['quantity'];
             $item = Coupon::model()->findByPk($item['id']);
             // Проходимся по всем элементам позиции (в позиции может быть больше одного купона)
@@ -273,11 +219,15 @@ class Operation extends CActiveRecord {
                 $purchase->secret_key = $purchase->getUniqueKey();
                 $purchase->status = Purchase::STATUS_NOT_ACTIVATED;
                 $purchase->org_id = $item->act->id_org_act;
-                $hasErrors = $this->purchaseHasErrors($user, $item);
+                $hasErrors = $this->purchaseHasErrors($user, $item, $purchaseByBonus);
                 if ($hasErrors == false) {
                     // Если не возникло ошибок, то списываем деньги со счета пользователя
                     if ($purchase->hasErrors() == false && $purchase->save()) {
-                        $user->balance -= $item->getPrice();
+
+                        if (!$purchaseByBonus)
+                            $user->balance -= $item->getPrice(); // оплата деньшами
+                        else
+                            $user->bonus -= $item->getPrice(); // оплата бонусами
                         $user->save();
 
                         // Покупка прошла успешно. Устанавливаем соответствующий статус для операции
@@ -303,9 +253,29 @@ class Operation extends CActiveRecord {
         return $operations;
     }
 
-    public function purchaseHasErrors($user, $item) {
-        if ($user->balance <= $item->getPrice()) {
-            return 'Не достаточно средств на счете';
+    /**
+     * Проверяем:
+     * - хаватет ли средств для оплаты
+     * - активна ли акция, есть ли купоны и т.д.
+     *
+     * @param $user
+     * @param $item
+     * @param $purchaseByBonus Оплатат бонусами
+     * @return bool|string
+     */
+    public function purchaseHasErrors($user, $item, $purchaseByBonus) {
+
+        // Проверяем хватает ли средств
+        if (!$purchaseByBonus) {
+            // акция не бонусная, проверяем кол-во рублей
+            if ($user->balance <= $item->getPrice())
+                return 'Не достаточно средств на счете';
+        } elseif($item->act->is_bonus) {
+            // акция бонусная, проверяем кол-во бонусов
+            if ($user->bonus <= $item->getPrice())
+                return 'Не достаточно бонусов на счете';
+        } else {
+            return 'Купон нельзя оплатить бонусами';
         }
 
         if (!$item->act->isForSale()) {
@@ -322,9 +292,8 @@ class Operation extends CActiveRecord {
     /**
      * Зачисление денег на счет пользователя.
      * 
-     * @param type $summ сумма пополнения баланса
-     * @param int $type тип операции
-     * @return boolean
+     * @param $summ сумма пополнения баланса
+     * @return bool
      */
     public function raiseDeposit($summ) {
         // Пополняем счет пользователю
@@ -360,4 +329,77 @@ class Operation extends CActiveRecord {
         return true;
     }
 
+    /**
+     * Оплачиваем покупки из корзины
+     *
+     * Оплата производится непосредственно со счета пользователя, оплата бонусами
+     * @return array возвращаем массив проведенных операций для отображения пользователю
+     */
+    public function paymentPurchaseByBonus() {
+        $purchases = Yii::app()->shoppingCart->getPositions();
+        $operations = array();
+        $user = User::model()->findByPk(Yii::app()->user->id);
+
+        // Проходимся по всем позициям
+        foreach ($purchases as $item) {
+            $quantity = $item['quantity'];
+            $item = Coupon::model()->findByPk($item['id']);
+            // Проходимся по всем элементам позиции (в позиции может быть больше одного купона)
+            for ($i = 0; $i < $quantity; $i++) {
+                // Для добавления в историю операций
+                $operationAttributes = array(
+                    'title' => 'Оплата товара',
+                    'description' => $item->getTitle(),
+                    'user_id' => $user->id,
+                    'summ' => $item->getPrice(),
+                    'type' => self::TYPE_PAYMENT_PURCHASE,
+                    'object_type' => 'Acts',
+                    'object_id' => $item->id,
+                );
+
+                // Создаем новую покупку
+                $purchase = new Purchase();
+                $purchase->user_id = $user->id;
+                $purchase->act_id = $item->id;
+                $purchase->secret_key = $purchase->getUniqueKey();
+                $purchase->status = Purchase::STATUS_NOT_ACTIVATED;
+                $purchase->org_id = $item->act->id_org_act;
+                $hasErrors = $this->purchaseHasErrors($user, $item);
+                if ($hasErrors == false) {
+
+                    // Если не возникло ошибок, то списываем деньги со счета пользователя
+                    if ($purchase->hasErrors()==false && $purchase->save()) {
+
+                        // Cпсисываем деньги со счета
+                        if (!$item->act->is_bouns) {
+                            // Если акция НЕ бонусная, спысывем деньги
+                            $user->balance -= $item->getPrice();
+                        } else {
+                            // акция бонусная, списываем бонусы
+                            $user->bonus -= $item->getPrice();
+                        }
+                        $user->save();
+
+                        // Покупка прошла успешно. Устанавливаем соответствующий статус для операции
+                        $operationAttributes['status'] = self::STATUS_SUCCESS;
+                        // Накручиваем ко-во купленных купонов
+                        $item->act->coupon_purchased++;
+                        $item->act->save();
+
+                        // Удаляем эту покупку с корзины и берем пиво =)
+                        Yii::app()->shoppingCart->remove($item->id);
+                    }
+                } else {
+                    $operationAttributes['status'] = self::STATUS_FAIL;
+                    $operationAttributes['extra'] = $hasErrors;
+                }
+
+                // Добавляем запись операции в таблицу
+                $operations[] = Operation::model()->addLog($operationAttributes);
+            }
+        }
+
+        // Возвращаем произведенные операции
+        return $operations;
+    }
 }

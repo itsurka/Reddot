@@ -224,6 +224,7 @@ class ActController extends Controller {
         $cloneAct->date_end_coupon_act = $act->date_end_coupon_act;
         $cloneAct->full_text_act = $act->full_text_act;
         $cloneAct->id_town_act = $act->id_town_act;
+        $cloneAct->is_active = 0;
         $cloneAct->save();
     }
 

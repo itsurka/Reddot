@@ -48,12 +48,12 @@
 
                             </div>
                         </a>
-                        <a class="nob" href="#">
+                        <a class="nob" href="/operation/purchase?bonus">
                             <div class="im" style="">
 
                             </div>
                             <div class="linktx">
-
+                                Оплатить бонусами
                             </div>
                         </a>
                     </div>
