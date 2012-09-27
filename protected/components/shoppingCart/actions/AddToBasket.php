@@ -8,7 +8,7 @@
 class AddToBasket extends CAction {
 
     public function run($act_id) {
-        $coupon = Coupon::model()->findByAttributes(array('act_id'=>$act_id));
+        $coupon = Coupon::model()->findByPk($act_id);
         if ($coupon) {
             Yii::app()->shoppingCart->put($coupon, 1);
             $return['small'] = $this->getController()->widget('application.components.widgets.Basket', array(), true);
@@ -18,5 +18,4 @@ class AddToBasket extends CAction {
             throw new CHttpException(404, 'Not found');
         }
     }
-
 }

@@ -1,4 +1,5 @@
-.idea/
+idea/
 assets/
 protected/runtime/
 nbproject/
+upload/

@@ -48,6 +48,12 @@
                     <div class="nav-collapse">
                         <ul class="nav">
                             <li>
+                                <?php echo CHtml::link('Купленные', '/manager/default/index'); ?>
+                            </li>
+                            <li>
+                                <?php echo CHtml::link('Подтверждённые', '/manager/default/archive'); ?>
+                            </li>
+                            <li>
                                 <a href="<?php echo Yii::app()->homeUrl; ?>">Вернуться на сайт</a>
                             </li>
                         </ul>
