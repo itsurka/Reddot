@@ -196,11 +196,13 @@ class ActController extends Controller {
         $cloneAct = new Act();
         $cloneAct->paid = $act->paid;
         $cloneAct->name_act = $act->name_act . '...(Копия)';
-        $short_url = $act->short_url;
-        if((strlen($short_url)+strlen('(Копия)')) > 32)
-            $short_url = substr($short_url, 0, strlen($short_url)-strlen('(Копия)'));
-        $short_url = substr($short_url, 0, strlen($short_url)-3);
-        $cloneAct->short_url = $short_url . '...(Копия)';
+
+        $short_url = $act->short_url.'_copy';
+        $resCount = Act::model()->countByAttributes(array('short_url'=>$short_url));
+        if ($resCount > 0)
+            $short_url .= '1';
+
+        $cloneAct->short_url = $short_url;
         $cloneAct->seo_title = $act->seo_title;
         $cloneAct->seo_keywords = $act->seo_keywords;
         $cloneAct->seo_description = $act->seo_description;
@@ -225,7 +227,20 @@ class ActController extends Controller {
         $cloneAct->full_text_act = $act->full_text_act;
         $cloneAct->id_town_act = $act->id_town_act;
         $cloneAct->is_active = 0;
-        $cloneAct->save();
+        $a = $cloneAct->save();
+
+        // Клонируем купоны акции
+        foreach ($act->coupons as $eachCooupon) {
+            $coupon = new Coupon();
+            $coupon->act_id = $cloneAct->id_act;
+            $coupon->title = $eachCooupon->title;
+            $coupon->total_cost = $eachCooupon->total_cost;
+            $coupon->first_cost = $eachCooupon->first_cost;
+            $coupon->last_cost = $eachCooupon->last_cost;
+            $coupon->discount = $eachCooupon->discount;
+            $coupon->created = time();
+            $coupon->save();
+        }
     }
 
 
