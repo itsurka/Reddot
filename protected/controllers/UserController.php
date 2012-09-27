@@ -331,8 +331,8 @@ class UserController extends Controller {
         $uploadsPath = $rootPath . 'upload' . $s . 'coupons';
         $fontPath = $rootPath . 'fonts/13761.ttf';
 
-//        if (true)
-        if(!$purchase->picture)
+        if (true)
+//        if(!$purchase->picture)
         {
             $act = Act::model()->findByPk($purchase->act_id);
 
@@ -395,8 +395,13 @@ class UserController extends Controller {
             $canvas->writeText(180, 343, $secretKey);
 
             // Пишем краткое описание
-            $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
-            $canvas->writeText(460, 340, $act->short_text_act);
+            $shortTextArray = Utils::strToArray($act->short_text_act, 40);
+            foreach($shortTextArray as $i=>$row)
+            {
+                if ($i>2) continue;
+                $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
+                $canvas->writeText(460, 340 + ($i*18), $row);
+            }
 
             // Пишем дата активности
             $canvas->useFont($arial, 12, $img->allocateColor(43, 43, 43));
