@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" afterPath="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/components/shoppingCart/actions/AddToBasket.php" afterPath="$PROJECT_DIR$/protected/components/shoppingCart/actions/AddToBasket.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/models/Operation.php" afterPath="$PROJECT_DIR$/protected/models/Operation.php" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,10 +36,73 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActController.php" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ActController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="242" column="9" selection-start="8232" selection-end="8232" vertical-scroll-proportion="0.94412106">
+            <state line="223" column="24" selection-start="7371" selection-end="7371" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OperationController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/OperationController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="70" column="46" selection-start="3044" selection-end="3044" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Operation.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/protected/models/Operation.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="220" column="27" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.3329453">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EShoppingCart.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="77" column="9" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/framework/collections/CMap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="125" column="5" selection-start="3417" selection-end="3417" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AddToBasket.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/actions/AddToBasket.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="22" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Coupon.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/models/Coupon.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="6" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="333" column="19" selection-start="11061" selection-end="11061" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -58,8 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/protected/modules/admin/views/town/_form.php" />
-        <option value="$PROJECT_DIR$/protected/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/framework/i18n/data/ru.php" />
         <option value="$PROJECT_DIR$/framework/i18n/data/ru_md.php" />
         <option value="$PROJECT_DIR$/protected/models/Act.php" />
@@ -68,12 +130,14 @@
         <option value="$PROJECT_DIR$/protected/components/ActListWidget.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php" />
-        <option value="$PROJECT_DIR$/protected/models/Operation.php" />
         <option value="$PROJECT_DIR$/protected/controllers/OperationController.php" />
         <option value="$PROJECT_DIR$/protected/views/layouts/column2.php" />
         <option value="$PROJECT_DIR$/protected/components/ActListBonusWidget.php" />
         <option value="$PROJECT_DIR$/protected/components/views/actListBonusWidget.php" />
         <option value="$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php" />
+        <option value="$PROJECT_DIR$/protected/controllers/UserController.php" />
+        <option value="$PROJECT_DIR$/protected/models/Operation.php" />
+        <option value="$PROJECT_DIR$/protected/components/shoppingCart/actions/AddToBasket.php" />
       </list>
     </option>
   </component>
@@ -167,7 +231,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="components" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -185,7 +249,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="models" />
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="shoppingCart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,55 +467,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/framework/base/CModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="342" column="20" selection-start="12181" selection-end="12181" vertical-scroll-proportion="0.3329453">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/config/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="36" selection-start="3842" selection-end="3842" vertical-scroll-proportion="0.52852154">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/components/widgets/views/basket_terminals.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="34" selection-start="1809" selection-end="1809" vertical-scroll-proportion="0.5868263">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/models/Operation.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="215" column="39" selection-start="7230" selection-end="7230" vertical-scroll-proportion="0.69965076">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/controllers/OperationController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="43" selection-start="2098" selection-end="2098" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="33" selection-start="3406" selection-end="3406" vertical-scroll-proportion="-0.10011642">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/protected/views/acts/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="5" selection-start="550" selection-end="550" vertical-scroll-proportion="-10.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/protected/views/acts/_listView.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="7" selection-start="1435" selection-end="1435" vertical-scroll-proportion="-22.5">
@@ -506,9 +525,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/UserController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="333" column="19" selection-start="11061" selection-end="11061" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/controllers/ActController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="242" column="9" selection-start="8232" selection-end="8232" vertical-scroll-proportion="0.94412106">
+        <state line="223" column="24" selection-start="7371" selection-end="7371" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/controllers/OperationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="46" selection-start="3044" selection-end="3044" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/framework/collections/CMap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="125" column="5" selection-start="3417" selection-end="3417" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/EShoppingCart.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="77" column="9" selection-start="2001" selection-end="2001" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Coupon.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="6" selection-start="401" selection-end="401" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/components/shoppingCart/actions/AddToBasket.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="289" selection-end="289" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/protected/models/Operation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="220" column="27" selection-start="7496" selection-end="7496" vertical-scroll-proportion="0.3329453">
           <folding />
         </state>
       </provider>

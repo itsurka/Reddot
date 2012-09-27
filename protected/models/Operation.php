@@ -215,7 +215,7 @@ class Operation extends CActiveRecord {
                 // Создаем новую покупку
                 $purchase = new Purchase();
                 $purchase->user_id = $user->id;
-                $purchase->act_id = $item->id;
+                $purchase->act_id = $item->act_id;
                 $purchase->secret_key = $purchase->getUniqueKey();
                 $purchase->status = Purchase::STATUS_NOT_ACTIVATED;
                 $purchase->org_id = $item->act->id_org_act;
