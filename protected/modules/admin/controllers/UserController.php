@@ -69,6 +69,7 @@ class UserController extends Controller {
 
         if (isset($_POST['User'])) {
             $model->setAttributes($_POST['User']);
+            $model->password = User::hashPassword($model->password);
             if ($model->save()) {
                 if (!empty($model->delete_avatar))
                     $model->deleteAvatar();
