@@ -8,7 +8,7 @@ class ActListBonusWidget extends CWidget {
         parent::init();
 
         $this->models = Act::model()->findAll(array(
-            'condition' => 'is_bonus = 1 AND (date_start_act <= NOW() AND date_end_act >= NOW())',
+            'condition' => 'is_bonus = 1 AND (date_start_act <= NOW() AND date_end_act >= NOW()) AND is_active IS TRUE',
             'limit' => 7,
         ));
     }

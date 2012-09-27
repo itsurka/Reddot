@@ -11,7 +11,7 @@
                 <a class="l_col_bonus_link" href="<?php echo Yii::app()->createUrl("/{$model->short_url}"); ?>"></a>
                 <div class="l_col_bonus_image" style="background: url('<?php echo $model->getPictureWebPath("185x100"); ?>') no-repeat 0 0;width: 185px;height:100px;"></div>
                 <div class="l_col_bonus_text">
-                    <a href="<?php echo Yii::app()->createUrl("/{$model->id_act}"); ?>">
+                    <a href="<?php echo Yii::app()->createUrl("/{$model->short_url}"); ?>">
                         <?php echo $model->short_text_act; ?>
                     </a>
                 </div>
