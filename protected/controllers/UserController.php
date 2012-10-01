@@ -193,7 +193,13 @@ class UserController extends Controller {
             $model->attributes = $_POST['User'];
             if ($model->validate()) {
                 if ($model->authenticate()) {
-                    $this->redirect(Yii::app()->user->getReturnUrl());
+                    $CHttpSession = new CHttpSession();
+                    if ($CHttpSession->get('showBasketAfterLogin')) {
+                        $CHttpSession->remove('showBasketAfterLogin');
+                        $this->redirect('/user/profile?show_basket=1');
+                    }
+                    else
+                        $this->redirect(Yii::app()->user->getReturnUrl());
                 }
             }
         }
@@ -260,7 +266,14 @@ class UserController extends Controller {
             $model->password = User::hashPassword($model->password);
             if ($model->save()) {
                 $model->authenticate(true);
-                $this->redirect(Yii::app()->user->getReturnUrl());
+
+                $CHttpSession = new CHttpSession();
+                if ($CHttpSession->get('showBasketAfterLogin')) {
+                    $CHttpSession->remove('showBasketAfterLogin');
+                    $this->redirect('/user/profile?show_basket=1');
+                }
+                else
+                    $this->redirect(Yii::app()->user->getReturnUrl());
             }
         }
 

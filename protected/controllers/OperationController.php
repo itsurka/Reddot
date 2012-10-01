@@ -63,6 +63,11 @@ class OperationController extends Controller {
 
     public function actionPurchase() {
         $CHttpRequest = new CHttpRequest();
+        if (Yii::app()->user->isGuest) {
+            $CHttpSession = new CHttpSession();
+            $CHttpSession->add('showBasketAfterLogin', true);
+            $this->redirect('/?show_login=1');
+        }
         $purchaseByBonus = false;
         if ($CHttpRequest->getParam('bonus') !== null)
             $purchaseByBonus = true;

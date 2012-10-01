@@ -26,10 +26,18 @@
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/script.js"></script>
         <!--[if IE 7]>
         <script src="<?php echo Yii::app()->baseUrl; ?>/js/DD_belatedPNG.js"></script>
-        <script>
+        <script type="text/javascript">
           DD_belatedPNG.fix('.bg_png, img');
         </script>
         <![endif]-->
+        <script type="text/javascript">
+            $(document).ready(function() {
+                var _show_login = <?php echo $_REQUEST['show_login'] ? 1 : 0; ?>;
+                if (_show_login) {
+                    show_login(1);
+                }
+            });
+        </script>
 
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/listview/jquery.yiilistview.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/other.js"></script>

@@ -336,3 +336,10 @@ Yii::app()->clientScript->registerScript('user/profile', "
     </td>
 </tr>
 <?php $this->endContent(); ?>
+
+<script type="text/javascript">
+    var showBasketAfterLogin = <?php echo $_REQUEST['show_basket'] ? 1 : 0 ?>;
+    if (showBasketAfterLogin) {
+         show_basket();
+    }
+</script>
