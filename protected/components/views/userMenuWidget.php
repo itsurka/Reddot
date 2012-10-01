@@ -101,7 +101,7 @@
                                                     <table class="fullWidth">
                                                         <tr>
                                                             <td width="160" align="center" valign="middle">
-                                                                <a  href="#">
+                                                                <a href="<?php echo Yii::app()->urlManager->createUrl('/site/recovery'); ?>">
                                                                     Восстановить доступ
                                                                 </a>
                                                             </td>

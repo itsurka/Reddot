@@ -264,7 +264,7 @@ class UserController extends Controller {
             }
         }
 
-        $this->render('register', array('model' => $model,));
+        $this->render('register', array('model' => $model));
     }
 
     /**
@@ -317,7 +317,6 @@ class UserController extends Controller {
 
         throw new CHttpException(404, 'Такой страницы не существует.');
     }
-
 
     /**
      * Генерим картинку купона акции
