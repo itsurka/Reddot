@@ -25,6 +25,36 @@ $form = $this->beginWidget('CActiveForm', array(
     });
 
 "); ?>
+
+<script type="text/javascript">
+
+    function movePhoto(elem, direction)
+    {
+        var _elem = elem.clone();
+        var pos = elem.index();
+
+        console.log(elem);
+        console.log(pos);
+
+
+        var elements = $('#added_act_photo .added_act_photo');
+        if (direction == 'up') {
+            if (pos == 0)
+                return false;
+
+            elements.eq(pos-1).before(_elem);
+            elem.remove();
+        } else {
+            if (pos+1 == elements.size())
+                return false;
+
+            elements.eq(pos+1).after(_elem);
+            elem.remove();
+        }
+    }
+
+</script>
+
 <fieldset>
     <?php if ($act->hasErrors()): ?>
         <div class="alert alert-error">
@@ -83,10 +113,34 @@ $form = $this->beginWidget('CActiveForm', array(
 
         <div class="control-group">
             <?php echo $form->labelEx($act, 'photo_act', array('class' => 'control-label')); ?>
-            <div class="controls">
+            <div class="controls" id="act_photo">
                 <?php echo $form->fileField($act, 'photo_act', array('class' => 'input-xlarge')); ?>
             </div>
-        </div>    
+            <div class="controls" id="added_act_photo">
+                <?php foreach($act->getAdditionalImages() as $eachImage): ?>
+                    <div class="added_act_photo">
+                        <?php echo CHtml::image($act->getAdditionalPictureWebPath("550x315", $eachImage), $eachImage, array('style'=>'width: 120px;')); ?>
+                        <?php echo CHtml::hiddenField('added_act_photo[]', $eachImage); ?>
+                        <span class="move_up" onclick="movePhoto($(this).parent(), 'up');"></span>
+                        <span class="move_down" onclick="movePhoto($(this).parent(), 'down');"></span>
+                        <span class="delete" onclick="$(this).parent().remove();"></span>
+                    </div>
+                    <?php  ?>
+                <?php endforeach; ?>
+            </div>
+            <div class="controls" id="new_act_photo"></div>
+            <div class="controls">
+                <div style="margin-top: 20px;margin-bottom: 20px;">
+                    <a href="#" class="addMorePhoto">Добавить ещё</a>
+                </div>
+            </div>
+            <div style="display: none;" id="additional_image_template">
+                <div class="additional_image">
+                    <?php echo $form->fileField($act, 'additional_images[]'); ?>&nbsp;
+                    <span class="delete" onclick="$(this).parent().remove();"></span>
+                </div>
+            </div>
+        </div>
 
         <div class="control-group">
             <?php echo $form->labelEx($act, 'delete_picture', array('class' => 'control-label')); ?>
@@ -150,7 +204,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
         $('.addMoreCoupons').click(function() {
             var count = $('#itemsList div').length;
-            
+
             if(count < 10) {
                 var template = $('#formItemTemplate').html();
                 $('#itemsList').append(template);
@@ -166,7 +220,18 @@ $form = $this->beginWidget('CActiveForm', array(
 
             return false;
         });
-        
+
+        $('.addMorePhoto').click(function() {
+            var count = $('#new_act_photo .additional_image').length;
+
+            if(count < 10) {
+                var template = $('#additional_image_template').html();
+                $('#new_act_photo').append(template);
+            }
+            
+            return false;
+        });
+
     ");
     ?>
     <div class="form-inline" style="margin: 0px 0px 0px 160px;">

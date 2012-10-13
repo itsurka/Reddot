@@ -113,4 +113,64 @@ class Option extends CActiveRecord
 			'criteria'=>$criteria,
 		));
 	}
+
+    public static function getWebsiteUrl($withProtocol=true)
+    {
+        $protocol = 'http://';
+        $url = self::getByName('website_url');
+        if ($withProtocol)
+        {
+            if (strpos($url, $protocol)===false)
+                $url = $protocol.$url;
+        }
+        else 
+        {
+            if (strpos($url, $protocol)!==false)
+                $url = str_replace($protocol, '', $url);
+        }
+
+        return $url;
+    }
+
+    public static function getPreparedUrl($url, $withProtocol=true)
+    {
+        $protocol = 'http://';
+        if ($withProtocol)
+        {
+            if (strpos($url, $protocol)===false)
+                $url = $protocol.$url;
+        }
+        else
+        {
+            if (strpos($url, $protocol)!==false)
+                $url = str_replace($protocol, '', $url);
+        }
+
+        return $url;
+    }
+
+    public static function getByName($name)
+    {
+        $return = '';
+        $model = self::model()->findByAttributes(array('name' => $name));
+        if ($model)
+            $return = $model->default_value;
+        
+        return $return;
+    }
+
+    public static function getWebsiteLink()
+    {
+        return CHtml::link(self::getWebsiteUrl(false), self::getWebsiteUrl());
+    }
+
+    public static function getCompanyName()
+    {
+        return self::getByName('company_name');
+    }
+
+    public static function getCompanyLink()
+    {
+        return CHtml::link(self::getPreparedUrl(self::getByName('company_url'), false), self::getPreparedUrl(self::getByName('company_url'), true));
+    }
 }

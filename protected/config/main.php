@@ -77,6 +77,11 @@ return array(
             // ImageMagick setup path
             'params' => array('directory' => '/opt/local/bin'),
         ),
+        'mailing'=>array(
+            'class'=>'application.components.mailing.MailingComponent',
+            'phpListPrefix' => 'phplist_', //префикс таблиц phplist
+            'validateEmails' => true //валидировать ли email при выполнении операций
+        ),
         // uncomment the following to enable URLs in path-format
         'urlManager' => array(
             'urlFormat' => 'path',
@@ -90,7 +95,6 @@ return array(
                 'archive' => '/acts/archive',
                 'bonus' => '/acts/bonus',
                 'search' => '/acts/search',
-                //
                 'page/<pageName:\w+>' => 'page/view',
                 'feedback' => 'site/feedback',
                 '<controller:\w+>/<id:\d+>' => '<controller>/view',

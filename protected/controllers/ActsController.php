@@ -161,8 +161,7 @@ class ActsController extends Controller {
         if (isset($_GET))
             $model->setAttributes($_GET);
 
-        // and (coupon_count > coupon_purchased or coupon_count = 0)
-        $dataProvider = $model->search('is_bonus = 0 AND ((date_end_act <= NOW()) OR  (coupon_count <= coupon_purchased and coupon_count > 0))  and paid = 0 and is_active IS TRUE');
+        $dataProvider = $model->search(Act::getPastActCondition());
         if (Yii::app()->request->isAjaxRequest)
             $this->renderPartial('_listView', array('dataProvider' => $dataProvider));
         else

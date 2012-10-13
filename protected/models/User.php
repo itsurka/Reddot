@@ -14,6 +14,7 @@
  * @property $website
  * @property $role
  * @property $id_towns_user
+ * @property $ntf_1
  */
 class User extends CActiveRecord {
     /**
@@ -189,6 +190,7 @@ class User extends CActiveRecord {
             'rememberMe' => 'Запомнить меня',
             'subscribe' => 'Подписаться на рассылку',
             'addressList' => 'Адрес',
+            'ntf_1' => 'ntf_1',
         );
     }
 
@@ -390,7 +392,7 @@ class User extends CActiveRecord {
         return "/upload/avatar/" . $type . "/" . $this->getCurrentOrder() . "/" . $this->avatar . ".jpg";
     }
 
-//TODO: перенести в хелпер
+    //TODO: перенести в хелпер
     public function getAvatarImageHtmlCode($type) {
         if ($this->avatar)
             return "<img src='" . $this->getAvatarWebPath($type) . "' >";
@@ -519,6 +521,15 @@ class User extends CActiveRecord {
                                 ':role' => 'organisation',
                             ),
                         )), 'id', 'company_name');
+    }
+
+    public static function getMainAdmin() {
+        $mainAdmin = User::model()->findByAttributes(array('superuser' => 1));
+        // FOR TEST!!!
+        /*$mainAdmin = new stdClass();
+        $mainAdmin->email = 'turcaigor@gmail.com';*/
+
+        return $mainAdmin;
     }
 
 }

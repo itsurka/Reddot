@@ -20,6 +20,10 @@
  * @property string $date_end_act
  * @property string $date_end_coupon_act
  * @property string $is_active
+ * @property string $is_published
+ * @property string $sent_past_notification
+ * @property string $sent_expired_coupons_date_notification Отправлено ли уведомление об окончании срока действия купонов
+ * @property string $additional_images
  */
 class Act extends CActiveRecord implements IECartPosition {
 
@@ -31,6 +35,7 @@ class Act extends CActiveRecord implements IECartPosition {
     public $delete_picture;
     public $coupon_count = 0;
     public $shortUrlPattern = '|^[a-zA-Z0-9-_]+|';
+    public $additionalImagesArray;
 
     /**
      * Дополнительные параметры для фильтра в админке
@@ -73,7 +78,7 @@ class Act extends CActiveRecord implements IECartPosition {
             array('photo_act', 'file', 'types' => 'jpg, jpeg, gif, png', "allowEmpty" => true),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id_act, filter, id_tag_act, orgNameSearch, name_act, short_text_act, id_org_act, id_town_act, coupon_count, is_bonus, date_start_act, date_end_act, date_end_coupon_act', 'safe', 'on' => 'search'),
+            array('id_act, filter, id_tag_act, orgNameSearch, name_act, short_text_act, id_org_act, id_town_act, coupon_count, is_bonus, date_start_act, date_end_act, date_end_coupon_act, is_published, additional_images', 'safe', 'on' => 'search'),
         );
     }
 
@@ -81,15 +86,20 @@ class Act extends CActiveRecord implements IECartPosition {
      * @return array relational rules.
      */
     public function relations() {
-        return array(
+        $relations = array(
             'town' => array(self::BELONGS_TO, 'Town', 'id_town_act'),
             'theme' => array(self::BELONGS_TO, 'Theme', 'id_themes_act'),
             'user' => array(self::BELONGS_TO, 'User', 'id_org_act'),
             'coupons' => array(self::HAS_MANY, 'Coupon', 'act_id'),
             'firstCoupon' => array(self::HAS_ONE, 'Coupon', 'act_id', 'order' => 'total_cost ASC'),
             'couponCount' => array(self::STAT, 'Coupon', 'act_id', 'order' => 'total_cost ASC'),
-            'favorites' => array(self::HAS_MANY, 'Favorites', 'id_act_fav', 'condition' => 'id_user_fav = :id_user_fav', 'params' => array(':id_user_fav' => Yii::app()->user->id)),
+            'favorites' => array(self::HAS_MANY, 'Favorites', 'id_act_fav', 'condition' => 'id_user_fav = :id_user_fav', 'params' => array(':id_user_fav' => 0)),
         );
+        // Костыль, если скрипт запущен не из консоли,
+        if (php_sapi_name() != 'cli')
+            $relations['favorites']['params'][':id_user_fav'] = Yii::app()->user->id;
+
+        return $relations;
     }
 
     /**
@@ -122,6 +132,10 @@ class Act extends CActiveRecord implements IECartPosition {
             'coupon_purchased' => 'Куплено купонов',
             'price_new_description' => 'Price Description',
             'is_active' => 'Показывать на сайте',
+            'is_published' => 'Is published',
+            'sent_past_notification' => 'Sent act. is past notification',
+            'sent_expired_coupons_date_notification' => 'Отправлено ли уведомление об окончании срока действия купонов',
+            'additional_images' => 'Дополнительные картинки',
         );
     }
 
@@ -227,6 +241,10 @@ class Act extends CActiveRecord implements IECartPosition {
         return "/upload/act/" . $type . "/" . $this->getCurrentOrder() . "/" . $this->photo_act . ".jpg";
     }
 
+    public function getAdditionalPictureWebPath($type, $photo) {
+        return "/upload/act/" . $type . "/" . $this->getCurrentOrder() . "/" . $photo . ".jpg";
+    }
+
     public function getPictureImageHtmlCode($type, $htmlOptions = array(), $alt = '') {
         if ($this->photo_act)
             return CHtml::image($this->getPictureWebPath($type), $alt, $htmlOptions);
@@ -259,7 +277,84 @@ class Act extends CActiveRecord implements IECartPosition {
             //
             $this->photo_act = md5_file($orig_save_path);
             $this->save(false);
+            return md5_file($orig_save_path);
         }
+        return '';
+    }
+
+    public function getAdditionalImages() {
+        $return = array();
+        if (!empty($this->additional_images)) {
+            if (is_string($this->additional_images) && is_array(json_decode($this->additional_images))) {
+                $return = json_decode($this->additional_images);
+            } else if (is_array($this->additional_images)) {
+                $return = $this->additional_images;
+            }
+        }
+        return $return;
+    }
+
+    /**
+     * Сохраняем доп. картинки для акций
+     * @return bool
+     */
+    public function saveAdditionalImages($mainImage=null) {
+        $this->clearAdditionalImages();
+        $savedAdditionalImages = array();
+
+        // Save old images (if exists)
+        if (!empty($_POST['added_act_photo'])) {
+            $this->additional_images = $_POST['added_act_photo'];
+        }
+        if (!empty($mainImage)) {
+            $this->addToAdditionalImages($mainImage, 'prepend');
+        }
+
+        // Save uploaded images
+        $countImages = count(@$_FILES['Act']['name']['additional_images']);
+
+        if (!$countImages) {
+            $this->additional_images = array_merge($this->getAdditionalImages(), $savedAdditionalImages);
+            $this->save(false);
+            return false;
+        }
+
+        for ($i=0; $i<$countImages; $i++) {
+            $uploadedImage = CUploadedFile::getInstance($this, "additional_images[$i]");
+
+            if ($uploadedImage!==null && !$uploadedImage->getHasError()) {
+                $orig_save_path = $this->getPictureSavePath(md5_file($uploadedImage->tempName), "original");
+                $uploadedImage->saveAs($orig_save_path);
+
+                // 550x315
+                $resize_save_path = $this->getPictureSavePath(md5_file($orig_save_path), "550x315");
+                WideImage::load($orig_save_path)->resize(550, 315, 'outside')->saveToFile($resize_save_path);
+
+                $savedAdditionalImages[] = md5_file($orig_save_path);
+            }
+        }
+        $this->additional_images = array_merge($this->getAdditionalImages(), $savedAdditionalImages);
+        $this->save(false);
+
+        return true;
+    }
+
+    public function addToAdditionalImages($image, $addType='append') {
+        $_additional_images = $this->getAdditionalImages();
+        if (!in_array($image, $_additional_images)) {
+            if ($addType == 'append') {
+                $_additional_images[] = $image;
+            } else {
+                array_unshift($_additional_images, $image);
+            }
+            $this->additional_images = $_additional_images;
+            return true;
+        }
+        return false;
+    }
+
+    public function clearAdditionalImages() {
+        $this->additional_images = array();
     }
 
     public function clonePictures($image, $cloneImage) {
@@ -303,6 +398,15 @@ class Act extends CActiveRecord implements IECartPosition {
     public function beforeDelete() {
         $this->deletePicture();
         return parent::beforeDelete();
+    }
+
+    protected function beforeSave() {
+        if (parent::beforeSave()) {
+            $this->additional_images = json_encode($this->getAdditionalImages());
+            return true;
+        }
+        else
+            return false;
     }
 
     public function getPictureSrc($type) {
@@ -427,4 +531,41 @@ class Act extends CActiveRecord implements IECartPosition {
         return $this->coupon_count > 0 ? true : false;
     }
 
+/*    protected function beforeSave() {
+        if (parent::beforeSave()) {
+            if (!$this->isNewRecord && $this->is_active && !$this->is_published) {
+                CMailer::addNewActNotification($this);
+            }
+            return true;
+        }
+        else
+            return false;
+
+    }*/
+
+    /**
+     * Условие для того чтобы акция считалась прошедшей
+     * @static
+     * @return string
+     */
+    public static function getPastActCondition() {
+        return 'is_bonus = 0 AND ((date_end_act <= NOW()) OR  (coupon_count <= coupon_purchased AND coupon_count > 0))  AND paid = 0 AND is_active IS TRUE';
+    }
+
+    /**
+     * Условие для того чтобы акция считалась прошедшей
+     * @static
+     * @return string
+     */
+    public static function getExpiredCouponsDateActCondition() {
+        return 'date_end_coupon_act <= NOW()';
+    }
+
+    public function getUrl() {
+        return CHtml::link(CHtml::encode($this->shortName), array("/{$this->short_url}"));
+    }
+
+    public function getStrActType() {
+        return $this->is_bonus ? 'Бонусеая' : 'Денежная';
+    }
 }

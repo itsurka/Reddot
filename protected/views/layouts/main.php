@@ -11,6 +11,7 @@
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/form.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/other.css" rel="stylesheet" type="text/css" />
         <link href="<?php echo Yii::app()->baseUrl; ?>/css/print.css" media="print" rel="stylesheet" type="text/css" />
+        <link href="<?php echo Yii::app()->baseUrl; ?>/css/print.css" media="print" rel="stylesheet" type="text/css" />
     <!--<script type="text/javascript" src="<?php //echo Yii::app()->baseUrl;                                                                                                    ?>/js/jquery-1.4.2.min.js"></script>-->
     <!--<script type="text/javascript" src="jquery.pngFix.pack.js"></script>-->
 
@@ -20,6 +21,7 @@
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.ui.mouse.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.ui.draggable.min.js"></script>
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/jquery.ui.droppable.min.js"></script>
+        <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/slides.js"></script>
 
         <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/js/selectbox.js"></script>
         <!--<script type="text/javascript" src="<?php //echo Yii::app()->baseUrl;                                                                                                      ?>/js/map_script.js"></script>-->
@@ -32,7 +34,7 @@
         <![endif]-->
         <script type="text/javascript">
             $(document).ready(function() {
-                var _show_login = <?php echo $_REQUEST['show_login'] ? 1 : 0; ?>;
+                var _show_login = <?php echo !empty($_REQUEST['show_login']) ? 1 : 0; ?>;
                 if (_show_login) {
                     show_login(1);
                 }

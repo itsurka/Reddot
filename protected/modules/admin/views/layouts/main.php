@@ -88,6 +88,9 @@
                             <li class="<?php echo $this->id == 'mailing' ? 'active' : ''; ?>">
                                 <a href="<?php echo Yii::app()->createUrl('admin/mailing'); ?>">Рассылки</a>
                             </li>
+                            <li class="<?php echo $this->id == 'mailing' ? 'active' : ''; ?>">
+                                <a href="<?php echo Yii::app()->createUrl('admin/mailing/mailer'); ?>">Уведомления</a>
+                            </li>
                             <li class="<?php echo $this->id == 'page' ? 'active' : ''; ?>">
                                 <a href="<?php echo Yii::app()->createUrl('admin/page'); ?>">Страницы</a>
                             </li>

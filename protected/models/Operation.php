@@ -189,6 +189,8 @@ class Operation extends CActiveRecord {
         $operations = array();
         $user = User::model()->findByPk(Yii::app()->user->id);
 
+        $boughtCoupons = array();
+
         // Проходимся по всем позициям
         foreach ($purchases as $item) {
 
@@ -238,6 +240,8 @@ class Operation extends CActiveRecord {
 
                         // Удаляем эту покупку с корзины и берем пиво =)
                         Yii::app()->shoppingCart->remove($item->id);
+
+                        $boughtCoupons[] = $purchase;
                     }
                 } else {
                     $operationAttributes['status'] = self::STATUS_FAIL;
@@ -250,7 +254,10 @@ class Operation extends CActiveRecord {
         }
 
         // Возвращаем произведенные операции
-        return $operations;
+        return array(
+            'operations' => $operations,
+            'boughtCoupons' => $boughtCoupons
+        );
     }
 
     /**

@@ -33,6 +33,26 @@
     });
 "); ?>
 
+<script type="text/javascript">
+
+    $(document).ready(function() {
+
+        var act_images_num = <?php echo count($model->getAdditionalImages()); ?>;
+
+        if (act_images_num > 1) {
+            $('#slides').slides({
+                width: 550,
+                responsive: true,
+                pagination: false,
+                slide: {
+                    interval: 650 // [Number] Interval of fade in milliseconds
+                }
+            });
+        }
+    });
+
+</script>
+
 <!-- Костыли для ебанутой верстки. Шаблон для активной ссылки. -->
 <script type="text/plain" id="templateTabActive">
     <div class="kpview_subpg_act kpviewSubpg" tabId="">
@@ -92,9 +112,13 @@
                                         <table width="100%" cellpadding="0" cellspacing="0" border="0">
                                             <tr>
                                                 <td width="550" valign="middle">
-                                                    <div class="kpview_bg_im_dv">
-                                                        <div class="kpview_bg_im_ram_rg"></div>
-                                                        <div class="kpview_bg_im" style="background: url('<?php echo $model->getPictureWebPath("550x315") ?>') no-repeat 0 1px;"></div>
+                                                    <div id="slides">
+                                                        <?php foreach($model->getAdditionalImages() as $eachImage): ?>
+                                                            <div class="kpview_bg_im_dv">
+                                                                <div class="kpview_bg_im_ram_rg"></div>
+                                                                <div class="kpview_bg_im" style="background: url('<?php echo $model->getAdditionalPictureWebPath("550x315", $eachImage) ?>') no-repeat 0 1px;"></div>
+                                                            </div>
+                                                        <?php endforeach; ?>
                                                     </div>
                                                 </td>
                                                 <td>

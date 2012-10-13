@@ -43,6 +43,43 @@ class UserController extends Controller {
     }
 
     /**
+     * Правила экшэнов
+     * @return array
+     */
+    public function actions() {
+        return array(
+            'subscribeList'=>array( //вывод контрола "Список пользователей для добавления"
+                'class'=>'application.components.mailing.GetUsersAction',
+
+                'yiiUserModel' => 'Users', //имя класса модели с пользователями
+                'yiiUserIdColumn' => 'id', //имя столбца, по которому связываем пользователей
+                'yiiUserEmailColumn' => 'email', //поле email
+                'yiiUserSortColumn' => 'email', //поле, по которому сортируется список
+                'yiiUserNameColumn' => 'username', //поле используемое для визуального отображения имени пользователя
+
+                'phpListPrefix' => 'phplist_', //префикс таблиц phpList
+
+                'formMethod' => 'post', //метод сабмита формы
+                'formAction' => Yii::app()->createUrl('/site/addSubscriber'), //адрес, куда должна сабмититься форма (см. далее)
+                'paramName' => 'subscriberIds' //имя параметра для сабмита
+            ),
+            'addSubscriber'=>array( //"Добавление подписчика"
+                'class'=>'application.components.mailing.AddSubscriberAction',
+
+                'yiiUserModel' => 'Users', //имя класса модели с пользователями
+                'yiiUsedIdColumn' => 'id', //имя столбца, по которому связываем пользователей
+                'yiiUserEmailColumn' => 'email', //поле email
+
+                'method' => 'post', //метод сабмита формы
+                'paramName'=>'subscriberIds', //имя параметра для сабмита
+
+                'mailingComponent' => 'mailing', //имя компонента, используемого для добавления
+                'autoConfirm' => true //считать ли адреса подписчиков автоматически подтверждёнными
+            )
+        );
+    }
+
+    /**
      * Updates a particular model.
      * If update is successful, the browser will be redirected to the 'view' page.
      */
@@ -52,7 +89,7 @@ class UserController extends Controller {
         $model->setScenario('update');
         $hashPassword = $model->password;
 
-        // if it is ajax validation request
+        // if it is ajax validation request$file = $this->getCouponAsPicture($model);
         if (isset($_POST['ajax']) && $_POST['ajax'] === 'user-profile') {
             if (isset($_POST['User']['subscribe'])) {
                 $model->setSubscribe((bool) $_POST['User']['subscribe']);
@@ -263,9 +300,12 @@ class UserController extends Controller {
 
         if (isset($_POST['User'])) {
             $model->setAttributes($_POST['User']);
+            $_password = $model->password;
             $model->password = User::hashPassword($model->password);
             if ($model->save()) {
                 $model->authenticate(true);
+
+                CMailer::sendUserRegistrationNtf($model, array('password'=>$_password));
 
                 $CHttpSession = new CHttpSession();
                 if ($CHttpSession->get('showBasketAfterLogin')) {

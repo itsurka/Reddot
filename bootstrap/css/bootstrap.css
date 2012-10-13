@@ -4981,3 +4981,43 @@ a.badge:hover {
 .invisible {
   visibility: hidden;
 }
+
+#new_act_photo input{
+    min-width: 256px;
+}
+
+.delete{
+    background: url("../../../images/icons/coquette/24x24/delete.png") no-repeat scroll center top transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    top: 11px;
+    width: 26px;
+}
+
+#added_act_photo{}
+
+#added_act_photo .added_act_photo{
+    margin: 5px 0;
+}
+
+.move_up{
+    background: url("../../../images/icons/coquette/24x24/up.png") no-repeat scroll center top transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    top: 11px;
+    width: 26px;
+}
+
+.move_down{
+    background: url("../../../images/icons/coquette/24x24/move_down.png") no-repeat scroll center top transparent;
+    cursor: pointer;
+    display: inline-block;
+    height: 26px;
+    position: relative;
+    top: 11px;
+    width: 26px;
+}

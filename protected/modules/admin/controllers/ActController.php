@@ -54,6 +54,7 @@ class ActController extends Controller {
         $valid = array();
 
         if (isset($_POST['Act']) && isset($_POST['Coupon'])) {
+
             $act->attributes = $_POST['Act'];
             $act->photo_act = CUploadedFile::getInstance($act, 'photo_act');
             $valid[] = $act->validate();
@@ -63,19 +64,21 @@ class ActController extends Controller {
                 $coupons[$i] = new Coupon();
                 $coupons[$i]->setAttributes($coupon);
                 $valid[] = $coupons[$i]->validate();
-
                 $i++;
             }
 
             if (!in_array(false, $valid)) {
                 $act->save(false);
                 $act->savePicture();
+                $_act = Act::model()->findByPk($act->id_act);
+                $act->saveAdditionalImages($_act->photo_act);
 
                 foreach ($coupons as $coupon) {
                     $coupon->act_id = $act->id_act;
                     $coupon->save(false);
                 }
 
+                CMailer::addNewActNotification($act);
                 $this->redirect(array('index'));
             }
         }
@@ -136,6 +139,8 @@ class ActController extends Controller {
                         $act->deletePicture();
                     } else {
                         $act->savePicture();
+                        $_act = Act::model()->findByPk($act->id_act);
+                        $act->saveAdditionalImages($_act->photo_act);
                     }
                 }
 
@@ -144,6 +149,7 @@ class ActController extends Controller {
                     $coupon->save(false);
                 }
 
+                CMailer::addNewActNotification($act);
                 $this->redirect(array('index'));
             }
         }
@@ -242,7 +248,6 @@ class ActController extends Controller {
             $coupon->save();
         }
     }
-
 
     /**
      * Сменить заначение акции, активная или нет

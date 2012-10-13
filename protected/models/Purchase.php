@@ -12,6 +12,7 @@
  * @property integer $status
  * @property integer $created
  * @property integer $modified
+ * @property integer $ntf_3
  */
 class Purchase extends CActiveRecord {
 
@@ -94,6 +95,7 @@ class Purchase extends CActiveRecord {
             'status' => 'Status',
             'created' => 'Created',
             'modified' => 'Modified',
+            'ntf_3' => 'Уведомлялка когда купон купили а не активировали и срок действия такого купона подходит к концу',
         );
     }
 

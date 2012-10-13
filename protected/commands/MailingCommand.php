@@ -1,40 +1,48 @@
 <?php
 
-Yii::import('application.models.Mailing');
-Yii::import('application.models.User');
+Yii::import('application.components.shoppingCart.IECartPosition');
 
-class MailingCommand extends CConsoleCommand {
+class MailingCommand extends CConsoleCommand
+{
+    public function actionRun($args)
+    {
+        $totalSend = 0;
+        $this->log('start');
 
-    public function run($args) {
-        $mailing = $this->getMailing();
-        $criteria = new CDbCriteria();
-        $criteria->condition = 'email != :email';
-        $criteria->params = array(
-            ':email' => '',
-        );
+        // Запускаем функции для добавления новых уведомлений - Начало {
+        $past = CMailer::addPastActsNotifications();
+        $this->log('added past acts: ' . $past);
 
-        if ($mailing->type) {
-            $criteria->addCondition('role = :role');
-            $criteria->params = $criteria->params + array(
-                ':role' => $mailing->type,
-            );
+        CMailer::addExpiredCouponsDateActsNotifications();
+
+        $monthlyInfo = CMailer::addMonthlyInfoNotification();
+        $this->log("newUsersCount: {$monthlyInfo['newUsersCount']}, soldCouponsCount: {$monthlyInfo['soldCouponsCount']}");
+        // Запускаем функции для добавления новых уведомлений - Конец }
+
+        $queues = $this->getMailing();
+
+        $queuesCount = count($queues);
+        if($queuesCount > 0)
+        {
+            foreach($queues as $eachQueue)
+            {
+                echo '$eachQueue[]<pre>';
+                print_r($eachQueue->attributes);
+                echo '</pre>';
+//                continue;
+//                $this->send($eachQueue->recipientEmail, $eachQueue->subject, $eachQueue->body); // FOR TEST!!!
+                $eachQueue->status = Mailing::STATUS_COMPLETED;
+                $eachQueue->save();
+                $totalSend++;
+            }
         }
 
-        if ($mailing->town_id) {
-            $criteria->addCondition('id_towns_user = :id_towns_user');
-            $criteria->params = $criteria->params + array(
-                ':id_towns_user' => $mailing->town_id,
-            );
-        }
-
-        $users = User::model()->findAll($criteria);
-        $this->startMailing($users, $mailing);
-
-        $mailing->status = Mailing::STATUS_COMPLETED;
-        $mailing->save();
+        $this->log("Отправлено писем: {$totalSend} из {$queuesCount}.");
+        $this->log('end');
     }
 
-    protected function send($to, $subject, $body) {
+    protected function send($to, $subject, $body)
+    {
         Yii::import('ext.email.Email');
         $email = new Email();
         $email->to = $to;
@@ -43,7 +51,8 @@ class MailingCommand extends CConsoleCommand {
         $email->send();
     }
 
-    protected function startMailing($users, Mailing $mailing) {
+    protected function startMailing($users, Mailing $mailing)
+    {
         if ($users) {
             foreach ($users as $recipient) {
                 $this->send($recipient->email, $mailing->subject, $mailing->body);
@@ -51,26 +60,37 @@ class MailingCommand extends CConsoleCommand {
         }
     }
 
-    protected function getMailing() {
-        /**
-         * Get mailing list
-         */
+    /**
+     * Берем новые письма
+     * @return CActiveRecord
+     */
+    protected function getMailing()
+    {
         $criteria = new CDbCriteria;
-        $criteria->condition = 'status = :status';
-        $criteria->params = array(
-            ':status' => Mailing::STATUS_PENDING,
-        );
+        $criteria->addInCondition('status', array(Mailing::STATUS_PENDING));
+        $criteria->limit = CMailer::SEND_ITEMS_BY_CALL;
+        $criteria->order = 'id ASC';
 
-        $mailing = Mailing::model()->find($criteria);
-        if (!$mailing) {
-            Yii::app()->end();
-        }
-        else {
-            $mailing->status = Mailing::STATUS_STARTED;
-            $mailing->save();
-        }
-
-        return $mailing;
+        return Mailing::model()->findAll($criteria);
     }
 
+    private function log($text)
+    {
+        if($text=='start' || $text=='end' || $text == 'exit')
+        {
+            echo "\n";
+            echo "\n";
+            echo "--".strtoupper($text)."--";
+            echo "\n";
+            echo "\n";
+            if ($text != 'start')
+                exit;
+        }
+        else
+        {
+            echo "\n";
+            echo "{$text}";
+            echo "\n";
+        }
+    }
 }

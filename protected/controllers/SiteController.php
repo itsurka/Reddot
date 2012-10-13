@@ -81,12 +81,14 @@ class SiteController extends Controller {
             if ($CHttpRequest->getParam('email') && filter_var($CHttpRequest->getParam('email'), FILTER_VALIDATE_EMAIL)) {
                 $email=$CHttpRequest->getParam('email');
                 $user = User::model()->findByAttributes(array('email'=>$CHttpRequest->getParam('email')));
-                if ($user) {
 
+                if ($user) {
                     $sendActivationKey = md5($user->id);
                     $activationKey = md5($sendActivationKey);
-
-                    $url = Yii::app()->getBaseUrl(true) . Yii::app()->urlManager->createUrl('site/recovery', array('key'=>$sendActivationKey));
+                    $user->activationKey = $activationKey;
+                    $user->save();
+                    CMailer::sendUserPassRecoveryNtf($user, array('activationKey'=>$sendActivationKey));
+                    /*$url = Yii::app()->getBaseUrl(true) . Yii::app()->urlManager->createUrl('site/recovery', array('key'=>$sendActivationKey));
                     $activationLink = CHtml::link('ссылке', $url);
 
                     $html = "
@@ -113,11 +115,7 @@ class SiteController extends Controller {
 
                     $result = mail($user->email, 'Востановление пароля', $html, $headers);
                     if (!$result)
-                        throw new CHttpException('Не удалось отправть письмо', 500);
-
-                    $user->activationKey = $activationKey;
-                    $user->save();
-
+                        throw new CHttpException('Не удалось отправть письмо', 500);*/
                     $return['message'] = "Письмо для востановления пароля отправлено по адресу <strong>{$email}</strong>";
                 }
                 else

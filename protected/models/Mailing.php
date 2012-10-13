@@ -10,8 +10,10 @@
  * @property integer $status
  * @property integer $type
  * @property integer $town_id
+ * @property integer $recipientEmail
  * @property integer $created
  * @property integer $modified
+ * @property integer $send_since_date
  */
 class Mailing extends CActiveRecord {
     // Статусы расслки
@@ -19,7 +21,7 @@ class Mailing extends CActiveRecord {
     const STATUS_PENDING = 1;
     const STATUS_STARTED = 2;
     const STATUS_COMPLETED = 3;
-    //
+
     const TYPE_USERS = 'Пользователям';
     const TYPE_ORGANIZATIONS = 'Организациям';
     const TYPE_LOCAL_ADMINS = 'Локальным админам';
@@ -30,6 +32,7 @@ class Mailing extends CActiveRecord {
         self::STATUS_STARTED => 'В обработке',
         self::STATUS_COMPLETED => 'Выполнен',
     );
+    
     public $typesListData = array(
         User::ROLE_USER => self::TYPE_USERS,
         User::ROLE_ORG => self::TYPE_ORGANIZATIONS,
@@ -60,13 +63,14 @@ class Mailing extends CActiveRecord {
         // NOTE: you should only define rules for those attributes that
         // will receive user inputs.
         return array(
-            array('subject, body', 'required'),
+            array('subject, body, recipientEmail', 'required'),
             array('status, town_id, created, modified', 'numerical', 'integerOnly' => true),
             array('subject', 'length', 'max' => 255),
             array('type', 'length', 'max' => 255),
+            array('recipientEmail', 'email'),
             // The following rule is used by search().
             // Please remove those attributes that should not be searched.
-            array('id, subject, body, status, type, town_id, created, modified', 'safe', 'on' => 'search'),
+            array('id, subject, body, status, type, town_id, created, modified, send_since_date', 'safe', 'on' => 'search'),
         );
     }
 
@@ -92,8 +96,10 @@ class Mailing extends CActiveRecord {
             'status' => 'Статус',
             'type' => 'Тип рассылки',
             'town_id' => 'Город',
+            'recipientEmail' => 'E-mail получателя',
             'created' => 'Created',
             'modified' => 'Modified',
+            'send_since_date' => 'Можно отправить начиная с этой даты',
         );
     }
 
@@ -113,8 +119,10 @@ class Mailing extends CActiveRecord {
         $criteria->compare('status', $this->status);
         $criteria->compare('type', $this->type);
         $criteria->compare('town_id', $this->town_id);
+        $criteria->compare('recipientEmail', $this->recipientEmail);
         $criteria->compare('created', $this->created);
         $criteria->compare('modified', $this->modified);
+        $criteria->compare('send_since_date', $this->send_since_date);
 
         return new CActiveDataProvider($this, array(
             'criteria' => $criteria,
@@ -125,11 +133,12 @@ class Mailing extends CActiveRecord {
         if (parent::beforeSave()) {
             if ($this->isNewRecord) {
                 $this->created = time();
+                if (empty($this->send_since_date))
+                    $this->send_since_date = time();
             }
 
             $this->modified = time();
             return true;
         }
     }
-
 }
