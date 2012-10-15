@@ -1,10 +1,10 @@
-<div class="title">
+<div class="title" style="margin-bottom: 28px">
     Здравствуйте<?php echo !empty($_user_->first_name) ? ', '.$_user_->first_name : ''; ?>!<br>
     Вы зарегистрированы на сайте <?php echo Option::getWebsiteLink(); ?>
 </div>
 
-<p>
-    <div class="title2">
+<p style="padding: 0; margin: 21px 0;">
+    <div class="title2" style="font-size: 1.1em;">
         <strong>
             Данные для входа в систему
         </strong>
@@ -13,8 +13,8 @@
     Пароль: <?php echo $_password_; ?>
 </p>
 
-<p>
-    <div class="title2">
+<p style="padding: 0; margin: 21px 0;">
+    <div class="title2" style="font-size: 1.1em;">
         <strong>
             Смена пароля
         </strong>
@@ -22,8 +22,8 @@
     Для смены пароля используйте вкладку <?php echo CHtml::link('Управление аккаунтом', Option::getWebsiteUrl() . '/user/update') ?> раздела "Личный кабинет"
 </p>
 
-<p>
-    <div class="title2">
+<p style="padding: 0; margin: 21px 0;">
+    <div class="title2" style="font-size: 1.1em;">
         <strong>
             Как пользоваться сервисом?
         </strong>

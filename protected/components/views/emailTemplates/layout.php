@@ -28,9 +28,9 @@
             }
 
             .footer{
-                    color: gray;
-                    font-size: 0.9em;
-                    margin-top: 50px;
+                color: gray;
+                font-size: 0.9em;
+                margin-top: 50px;
             }
 
             .content{
@@ -99,27 +99,27 @@
     </head>
     <body>
 
-        <div class="main">
+        <div class="main" style="width: 800px; font-family: sans-serif; font-size: 0.9em;">
             <div class="header">
-                <div class="logo">
+                <div class="logo" style="float: left;">
                     <a href="<?php echo $_websiteUrl_; ?>">
                         <?php echo CHtml::image($_websiteUrl_ . '/images/reddot.jpg'); ?>
                     </a>
                 </div>
-                <div class="websiteUrl">
+                <div class="websiteUrl" style="float: right;">
                     <?php echo $_websiteLink_; ?>
                 </div>
             </div>
 
-            <div class="clear"></div>
+            <div class="clear" style="clear: both;"></div>
 
-            <div class="content">
+            <div class="content" style="margin-top: 26px;">
                 <?php echo $_content_; ?>
             </div>
 
-            <div class="clear"></div>
+            <div class="clear" style="clear: both;"></div>
 
-            <div class="footer">
+            <div class="footer" style="color: gray; font-size: 0.9em; margin-top: 50px;">
                 <div style="margin: 0px 0;">***</div>
                 &copy;&nbsp;<?php echo Option::getCompanyLink(); ?><br>
                 <?php echo Option::getByName('company_phone') ?><br>

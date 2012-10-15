@@ -253,7 +253,10 @@ class Act extends CActiveRecord implements IECartPosition {
     }
 
     public function savePicture() {
+
+        $_oldValue = $this->photo_act;
         $this->photo_act = CUploadedFile::getInstance($this, 'photo_act');
+
         if (!empty($this->photo_act->tempName)) {
             $orig_save_path = $this->getPictureSavePath(md5_file($this->photo_act->tempName), "original");
             $this->photo_act->saveAs($orig_save_path);
@@ -279,6 +282,7 @@ class Act extends CActiveRecord implements IECartPosition {
             $this->save(false);
             return md5_file($orig_save_path);
         }
+        $this->photo_act = $_oldValue;
         return '';
     }
 

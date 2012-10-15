@@ -288,7 +288,10 @@ class CMailer
             $s = DIRECTORY_SEPARATOR;
             $rootPath = dirname(Yii::getPathOfAlias('application')) . $s;
             $uploadsPath = $rootPath . 'upload' . $s . 'coupons';
-            $attachments[] = $uploadsPath.$s.$purchase->picture;
+            $attachments[] = array(
+                'filepath' => $uploadsPath.$s.$purchase->picture,
+                'name' => $purchase->secret_key . '.jpg',
+            );
         }
 
         return self::sendEmail($userModel->email, $subject, $body, $attachments);
@@ -394,17 +397,19 @@ class CMailer
      * @param array $attachments
      * @return bool|void
      */
-    protected function sendEmail($to, $subject, $body, $attachments=array())
+    public function sendEmail($to, $subject, $body, $attachments=array())
     {
-        Yii::import('application.components.phpmailer.phpmailer');
+        $dir = Yii::getPathOfAlias('webroot.lists.admin.phpmailer');
+        include_once $dir . '/classphpmailer.php';
 
-        $mail = new phpmailer();
+        $mail = new PHPMailer();
         $mail->IsMail();
+        $mail->CharSet = 'UTF-8';
         $mail->From = "noreply@reddot.com";
         $mail->FromName = "noreply@reddot.com";
         $mail->AddAddress($to);
-        foreach ($attachments as $file)
-            $mail->AddAttachment($file);
+        foreach ($attachments as $attachment)
+            $mail->AddAttachment($attachment['filepath'], $attachment['name']);
 
         $mail->IsHTML(true);
         $mail->Subject = $subject;

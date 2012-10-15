@@ -107,6 +107,14 @@ return array(
             ),
         ),
         // uncomment the following to use a MySQL database
+        /*'db' => array(
+            'connectionString' => 'mysql:host=localhost;dbname=reddot',
+            'emulatePrepare' => true,
+            'username' => 'root',
+            'password' => 'root',
+            'charset' => 'utf8',
+            'initSQLs'=>array("set time_zone='+03:00';"),
+        ),*/
         'db' => array(
             'connectionString' => 'mysql:host=localhost;dbname=reddot',
             'emulatePrepare' => true,

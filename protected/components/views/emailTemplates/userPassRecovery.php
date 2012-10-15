@@ -1,5 +1,5 @@
-<p>
-    <div class="title2">
+<p style="padding: 0; margin: 21px 0;">
+    <div class="title2" style="font-size: 1.1em;">
         <strong>
             Востановление пароля
         </strong>
@@ -8,6 +8,6 @@
     Для установки нового пароля продите по данной <?php echo $_activationLink_; ?>
 </p>
 
-<p>
+<p style="padding: 0; margin: 21px 0;">
     Проигнориуйте данное сообщение, если Вы не являетесь пользователем данного сайта.
 </p>
