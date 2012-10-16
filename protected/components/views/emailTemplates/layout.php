@@ -99,7 +99,7 @@
     </head>
     <body>
 
-        <div class="main" style="width: 800px; font-family: sans-serif; font-size: 0.9em;">
+        <div class="main" style="width: 800px; font-family: sans-serif; font-size: 0.9em; color: #000000;">
             <div class="header">
                 <div class="logo" style="float: left;">
                     <a href="<?php echo $_websiteUrl_; ?>">

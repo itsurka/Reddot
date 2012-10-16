@@ -3,10 +3,8 @@
 </div>
 
 <p style="padding: 0; margin: 21px 0;">
-    <div class="title2" style="font-size: 1.1em;">
-        <strong>
-            Вами совершена покупка и оплата купонов:
-        </strong>
+    <div class="title2" style="font-size: 1.1em;  color: #000; font-weight: bold;">
+        Вами совершена покупка и оплата купонов:
     </div>
 </p>
 
@@ -32,21 +30,23 @@
                 </div>
                 <div class="lines">&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;</div>
             </div>
-            <div class="coupon-right" style="float: left; margin-left: 30px;">
-                <span style="color: #555">Дата окончания действия купона:</span> <strong><?php echo date('d.m.Y', strtotime($_act_->date_end_coupon_act)); ?></strong><br>
-                <span style="color: #555"><strong>Для использования кода в компании можно:</strong></span>
-                <ul style=" color: #555; margin-bottom: 10px; margin-top: 10px; padding-left: 10px; list-style-type: none;">
-                    <li> - сфотографировать код на телефон</li>
-                    <li> - записать на бумаге</li>
-                    <li> - распечатать изображение *.jpg в приложении к письму</li>
-                </ul>
+            <div class="coupon-right" style="float: left; margin-left: 30px; color: #000;">
+                <span style="color: #555">Дата окончания действия купона:</span> <span style=" color: #000; font-weight: bold;"><?php echo date('d.m.Y', strtotime($_act_->date_end_coupon_act)); ?></span><br>
+                <div style="color: rgb(85, 85, 85); margin-bottom: 10px; margin-top: 5px; padding-left: 10px; font-weight: bold;">Для использования кода в компании можно:</div>
+                <div style="margin-top: 12px; ">
+                    <ul style=" color: #555; margin-bottom: 10px; margin-top: 8px; padding-left: 10px; list-style-type: none;">
+                        <li style="padding-bottom: 3px;"> - сфотографировать код на телефон</li>
+                        <li style="padding-bottom: 3px;"> - записать на бумаге</li>
+                        <li> - распечатать изображение *.jpg в приложении к письму</li>
+                    </ul>
+                </div>
             </div>
             <div class="clear" style="clear: both;"></div>
         </div>
 
-        <div class="left-border" style="margin-top: 5px; border-left: 3px solid red; padding-left: 12px;">
-            <div class="organization-info" style="font-size: 0.9em;">
-                <strong>Контакты и адреса организации:</strong><br>
+        <div class="left-border" style="margin-top: 5px; border-left: 3px solid red; padding-left: 12px; color: #000;">
+            <div class="organization-info" style="font-size: 0.9em; color: #000;">
+                <div style=" color: #000; font-weight: bold;">Контакты и адреса организации:</div><br>
                 <?php echo $_act_->user->phone ?><br>
                 <?php
                 $addresses = json_decode($_act_->user->address);
