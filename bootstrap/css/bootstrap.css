@@ -4986,7 +4986,7 @@ a.badge:hover {
     min-width: 256px;
 }
 
-.delete{
+#town-form .delete{
     background: url("../../../images/icons/coquette/24x24/delete.png") no-repeat scroll center top transparent;
     cursor: pointer;
     display: inline-block;
