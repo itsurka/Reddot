@@ -11,7 +11,24 @@ $form = $this->beginWidget('CActiveForm', array(
 <?php Yii::app()->clientScript->registerScript('custom redactor', "
     var editor = CKEDITOR.replace('Act_full_text_act', {
         width: '730px',
-        height: '490px'
+        height: '490px',
+        toolbar : [
+            ['Source','-','Save','NewPage','Preview','-','Templates'],
+            ['Cut','Copy','Paste','PasteText','PasteFromWord','-','Print', 'SpellChecker', 'Scayt'],
+            ['Undo','Redo','-','Find','Replace','-','SelectAll','RemoveFormat'],
+            ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+            '/',
+            ['Bold','Italic','Underline','Strike','-','Subscript','Superscript'],
+            ['NumberedList','BulletedList','-','Outdent','Indent','Blockquote','CreateDiv'],
+            ['JustifyLeft','JustifyCenter','JustifyRight','JustifyBlock'],
+            ['BidiLtr', 'BidiRtl' ],
+            ['Link','Unlink','Anchor'],
+            ['Image','Flash','Table','HorizontalRule','Smiley','SpecialChar','PageBreak','Iframe'],
+            '/',
+            ['Styles','Format','Font','FontSize'],
+            ['TextColor','BGColor'],
+            ['Maximize', 'ShowBlocks','-','About']
+        ]
     });
     CKFinder.setupCKEditor( editor, '/js/ckfinder/');
 
@@ -149,9 +166,9 @@ $form = $this->beginWidget('CActiveForm', array(
             </div>
         </div>
 
-        <h3>Введите денежные и скидочные параметры</h3>
+        <label class="control-label required">Введите денежные и скидочные параметры</label>
+        <!--<h3>Введите денежные и скидочные параметры</h3>-->
         <!--<p class="help-block">Тут будет содержаться описание этих текстовых полей...</p>-->
-        <hr />
         <div class="control-group">
             <div class="controls">
                 <?php echo $form->textArea($act, 'price_new_description', array('class' => '', 'placeholder' => 'Исходная цена, минус проценты, итоговая цена.')); ?>
