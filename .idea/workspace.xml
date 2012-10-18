@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31a6e3af-a7c3-48ba-9a5f-22782bd3eb64" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" afterPath="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" />
     </list>
     <ignored path="Reddot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,7 +37,7 @@
       <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="169" column="62" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.37125748">
+            <state line="181" column="58" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.56646705">
               <folding />
             </state>
           </provider>
@@ -89,8 +89,8 @@
         <option value="$PROJECT_DIR$/protected/commands/MailingCommand.php" />
         <option value="$PROJECT_DIR$/protected/controllers/UserController.php" />
         <option value="$PROJECT_DIR$/protected/components/CMailer.php" />
-        <option value="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" />
         <option value="$PROJECT_DIR$/bootstrap/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/protected/modules/admin/views/act/_form.php" />
       </list>
     </option>
   </component>
@@ -485,6 +485,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/protected/data/reddot_start_2012-10-15.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1695" column="0" selection-start="73072" selection-end="73072" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/ckeditor/config.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="56" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
@@ -499,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/protected/data/reddot_start_2012-10-15.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1695" column="0" selection-start="73072" selection-end="73072" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bootstrap/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="4988" column="18" selection-start="99962" selection-end="99962" vertical-scroll-proportion="0.0">
@@ -515,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="169" column="62" selection-start="6986" selection-end="6986" vertical-scroll-proportion="0.37125748">
+        <state line="181" column="58" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.56646705">
           <folding />
         </state>
       </provider>

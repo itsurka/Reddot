@@ -39,6 +39,7 @@ $form = $this->beginWidget('CActiveForm', array(
 
     CKEDITOR.replace('Act_price_new_description', {
         width: '730px',
+        height: '100px'
     });
 
 "); ?>
@@ -166,19 +167,27 @@ $form = $this->beginWidget('CActiveForm', array(
             </div>
         </div>
 
-        <label class="control-label required">Введите денежные и скидочные параметры</label>
-        <!--<h3>Введите денежные и скидочные параметры</h3>-->
+        <label class="control-label required">
+            Введите денежные и<br>скидочные<br>параметры<br>(текст слева от кнопки<br>Купить)
+        </label>
+<!--        <h3>Введите денежные и<br>скидочные<br>параметры<br>(текст слева от кнопки<br>Купить)</h3>-->
         <!--<p class="help-block">Тут будет содержаться описание этих текстовых полей...</p>-->
-        <div class="control-group">
-            <div class="controls">
-                <?php echo $form->textArea($act, 'price_new_description', array('class' => '', 'placeholder' => 'Исходная цена, минус проценты, итоговая цена.')); ?>
-                <p class="help-block">Текст рядом с кнопкой КУПИТЬ на странице акции</p>
-            </div>
-        </div>
 
         <div class="control-group">
             <div class="controls">
-                <?php echo $form->textField($act, 'price_new', array('placeholder' => 'Можете указать цену')); ?>
+                <?php echo $form->textArea($act, 'price_new_description', array('class' => '', 'placeholder' => 'Исходная цена, минус проценты, итоговая цена.')); ?>
+            </div>
+        </div>
+        <div class="control-group">
+            <div class="controls" style="margin-left: 0px;">
+                <div style="margin-top: 0px; float: left; width: 143px; position: relative; padding-right: 17px;">
+                    <p class="help-block" style="margin-top: 0px; text-align: right;">
+                        Текст рядом с кнопкой КУПИТЬ на странице акции
+                    </p>
+                </div>
+                <div>
+                    <?php echo $form->textField($act, 'price_new', array('placeholder' => 'Можете указать цену')); ?>
+                </div>
             </div>
         </div>
     </div>
