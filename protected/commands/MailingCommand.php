@@ -4,6 +4,11 @@ Yii::import('application.components.shoppingCart.IECartPosition');
 
 class MailingCommand extends CConsoleCommand
 {
+    /**
+     * @param $args
+     * @return void
+     * TODO: протестить
+     */
     public function actionRun($args)
     {
         $totalSend = 0;
@@ -26,11 +31,7 @@ class MailingCommand extends CConsoleCommand
         {
             foreach($queues as $eachQueue)
             {
-                echo '$eachQueue[]<pre>';
-                print_r($eachQueue->attributes);
-                echo '</pre>';
-//                continue;
-//                $this->send($eachQueue->recipientEmail, $eachQueue->subject, $eachQueue->body); // FOR TEST!!!
+                //$this->send($eachQueue->recipientEmail, $eachQueue->subject, $eachQueue->body);
                 $eachQueue->status = Mailing::STATUS_COMPLETED;
                 $eachQueue->save();
                 $totalSend++;

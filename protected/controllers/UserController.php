@@ -277,8 +277,16 @@ class UserController extends Controller {
         $userObj->first_name = $user['first_name'];
         $userObj->username = $user['first_name'];
         $userObj->last_name = $user['last_name'];
+
         if (isset($user['email'])) {
-            $userObj->email = $user['email'];
+            $model = User::model()->findByAttributes(array('email'=>trim($user['email'])));
+            if ($model) {
+                $userObj = $model;
+                $userObj->soc_network = $user['network'];
+                $userObj->soc_uid = $user['uid'];
+            } else {
+                $userObj->email = $user['email'];
+            }
         }
 
         if ($userObj->uauthenticate()) {

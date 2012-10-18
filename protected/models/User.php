@@ -109,7 +109,7 @@ class User extends CActiveRecord {
             array('addressList', 'checkPattern'),
             array('password, password2', 'length', 'min' => 6),
             array('password, email', 'required', 'on' => 'register, login'),
-            array('avatar', 'file', 'types' => 'jpg, gif, png', "allowEmpty" => TRUE),
+            array('avatar', 'file', 'types' => 'jpg, jpeg, gif, png', "allowEmpty" => TRUE),
 //            array('username, email', 'unique'),
 //            array('email, username', 'unique'),
             array('email', 'unique', 'on' => 'register,update'),
@@ -525,10 +525,6 @@ class User extends CActiveRecord {
 
     public static function getMainAdmin() {
         $mainAdmin = User::model()->findByAttributes(array('superuser' => 1));
-        // FOR TEST!!!
-        /*$mainAdmin = new stdClass();
-        $mainAdmin->email = 'turcaigor@gmail.com';*/
-
         return $mainAdmin;
     }
 

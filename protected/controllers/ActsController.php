@@ -180,7 +180,7 @@ class ActsController extends Controller {
             $model->setAttribute('filter', 'new');
         }
 
-        $condition = 'is_bonus = 0 AND (date_start_act <= NOW() AND date_end_act >= NOW()) and paid = 0 and (coupon_count > coupon_purchased or coupon_count = 0) AND is_active IS TRUE';
+        $condition = '(date_start_act <= NOW() AND date_end_act >= NOW()) and paid = 0 and (coupon_count > coupon_purchased or coupon_count = 0) AND is_active IS TRUE';
         $dataProvider = $model->search($condition);
 
         if (Yii::app()->request->isAjaxRequest)

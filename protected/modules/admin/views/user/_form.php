@@ -136,7 +136,14 @@ $form = $this->beginWidget('CActiveForm', array(
             <div class="controls">
                 <?php echo $form->textArea($model, 'working_time', array('class' => 'input-xlarge')); ?>
             </div>
-        </div> 
+        </div>
+
+        <div class="control-group">
+            <?php echo $form->labelEx($model, 'id_towns_user', array('class' => 'control-label')); ?>
+            <div class="controls">
+                <?php echo $form->dropDownList($model,'id_towns_user', CHtml::listData(Town::model()->findAll(), 'id_towns', 'name_towns')); ?>
+            </div>
+        </div>
 
         <div class="control-group">
             <?php echo $form->labelEx($model, 'website', array('class' => 'control-label')); ?>

@@ -55,7 +55,7 @@ class WebUser extends CWebUser {
                 $this->_town = Town::model()->findByPk($this->model->id_towns_user);
             }
             else {
-                $defaultId = 1; // Нужно откудо-то получить ID города, который будет использовать по умолчанию
+                $defaultId = 2; // Нужно откудо-то получить ID города, который будет использовать по умолчанию
                 $this->_town = Town::model()->findByPk($defaultId);
             }
         }

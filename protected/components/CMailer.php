@@ -383,11 +383,12 @@ class CMailer
      * Проверяем если сегодня последний день месяца
      * @static
      * @return bool
+     * TODO: протестить
      */
     public static function getTodayIsLastDayOfMonth()
     {
         //return date("Y-m-t", strtotime(date('Y-m-d'))) == date('Y-m-d');
-        return true; // FOR TEST!!!
+        return true;
     }
 
     /**
