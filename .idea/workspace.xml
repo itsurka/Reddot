@@ -37,7 +37,7 @@
       <file leaf-file-name="_form.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/_form.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="181" column="58" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.56646705">
+            <state line="167" column="12" selection-start="6863" selection-end="6863" vertical-scroll-proportion="0.35928145">
               <folding />
             </state>
           </provider>
@@ -515,7 +515,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/protected/modules/admin/views/act/_form.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="181" column="58" selection-start="7581" selection-end="7581" vertical-scroll-proportion="0.56646705">
+        <state line="167" column="12" selection-start="6863" selection-end="6863" vertical-scroll-proportion="0.35928145">
           <folding />
         </state>
       </provider>

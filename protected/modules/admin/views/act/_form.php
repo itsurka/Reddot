@@ -160,12 +160,12 @@ $form = $this->beginWidget('CActiveForm', array(
             </div>
         </div>
 
-        <div class="control-group">
-            <?php echo $form->labelEx($act, 'delete_picture', array('class' => 'control-label')); ?>
+        <!--<div class="control-group">
+            <?php /*echo $form->labelEx($act, 'delete_picture', array('class' => 'control-label')); */?>
             <div class="controls">
-                <?php echo $form->checkBox($act, 'delete_picture'); ?>
+                <?php /*echo $form->checkBox($act, 'delete_picture'); */?>
             </div>
-        </div>
+        </div>-->
 
         <label class="control-label required">
             Введите денежные и<br>скидочные<br>параметры<br>(текст слева от кнопки<br>Купить)
